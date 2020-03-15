@@ -2,8 +2,8 @@
     "manifest_version": 2,
     "name": "Timeology",
     "version": "1.0",
-
-    "browser_action": {
+    "description": "Timeology helps you organize your time.",
+    "browser_action": {   
       "default_popup": "popup.html",
       "default_icon": {
         "16": "images/58e8fe8deb97430e819064c7.png",
