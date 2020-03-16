@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <!-- <script src="Script/test.js"></script> -->
+</head>
+
 <body>
     <style>
         body {
-        background-color: rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
         }
+
         h1 {
-            background-color: rgb(71, 167, 231);
+            background-color: rgb(250, 17, 0);
             font-family: "OCR A Std";
             text-align: center;
             border-radius: 20px;
-            border:2px solid rgb(40, 228, 49);
+            border: 2px solid rgb(255, 255, 255);
             color: rgb(138, 25, 11);
+            font-style: oblique;
         }
     </style>
-   <h1>TIMEOLOGY</h1>
-    <!-- <script type="text/javascript" src="script/myScript.js"></script> -->
+    <h1>TIMEOLOGY</h1>
 
     <style>
         div {
@@ -37,14 +42,15 @@
         }
     </style>
     <div>
-        <form input="/action_page.php" id="myForm" method="POST">
+        <!-- input="/action_page.php"  method="POST" -->
+        <form id="myForm" >
             <label for="subject">Subject:</label>
             <select id="subject" name="subject" required>
                 <option value="AP Calculus AB">AP Calculus AB</option>
                 <option value="AP Calculus BC">AP Calculus BC</option>
                 <option value="AP Stats">AP Statistics</option>
             </select>
-            <!-- <input value="text" name="text">hi</input> -->
+
             <label for="hours">Hours:</label>
             <select id="hours" name="hours" required>
                 <option value="0">0</option>
@@ -65,6 +71,8 @@
                 <option value="50">50</option>
             </select>
             <input type="submit">
+
+            <!-- <button id="click-this">click</button> -->
         </form>
     </div>
 </body>
