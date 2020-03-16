@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // alert(genres);
 
   });
-  
+   
   // The handler also must go in a .js file
   function handler() {
     alert('sdfd');
