@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!-- <script src="Script/test.js"></script> -->
+    <script src="Script/btn.js"></script>
     <link rel="stylesheet" href="css/popup.css">
 </head>
 
@@ -10,7 +10,8 @@
     <h1>TIMEOLOGY</h1>
 
     <div>
-        <form id="myForm" input="/action_page.php"  method="POST" >
+        <!-- input="/action_page.php" method="POST" -->
+        <form id="myForm">
             <label for="subject">Subject:</label>
             <select id="subject" name="subject" required>
                 <option value="AP Calculus AB">AP Calculus AB</option>
@@ -37,9 +38,9 @@
                 <option value="40">40</option>
                 <option value="50">50</option>
             </select>
-            <input type="submit">
 
-            <!-- <button id="click-this">click</button> -->
+            <button id="btn_submit">Submit</button>
+
         </form>
     </div>
 </body>

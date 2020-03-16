@@ -30,7 +30,7 @@
                 "https://fuhsd.schoology.com/"
             ],
             "js": [
-                "Script/test.js"
+                "Script/btn.js"
             ],
             "run_at": "document_end"
         }
