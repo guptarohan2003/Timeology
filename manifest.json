@@ -33,6 +33,7 @@
                 "Script/test.js"
             ],
             "run_at": "document_end"
+            
         }
     ]
 }
