@@ -36,4 +36,8 @@ chrome.runtime.onInstalled.addListener(function () {
             actions: [new chrome.declarativeContent.ShowPageAction()]
         }]);
     });
+
+    <script language =" text" >
+        Please fill out the form in the popup so that we can provide better estimates of your hw time
+    </script>   
 });
