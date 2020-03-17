@@ -7,6 +7,7 @@
         "declarativeContent",
         "storage",
         "tabs"
+
     ],
     "background" :{
         "scripts": ["Script/background.js"],
