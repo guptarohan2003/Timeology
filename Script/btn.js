@@ -1,10 +1,6 @@
 // Pure JS:
 document.addEventListener('DOMContentLoaded', function () {
-
-   if(chrome.getcookie("blah")){ 
     document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
-    chrome.setcookie("blah") == " ";
-   }
 });
 
 
