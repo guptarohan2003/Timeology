@@ -5,16 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function btnSubmitHandler() {
 
-    chrome.storage.sync.get(['numSubmissions'], function (result) {
-        var counter = result.numSubmissions;
-        var form = document.forms["myForm"];
-        var data = "";
-        var i;
-        for (i = 0; i < form.length; i++) {
-            data += form.elements[i].value + "  ";
-        }
-        alert(data);
-        //reset form
-        form.reset();
+    var form = document.forms["myForm"];
+    var data = "";
+    var i;
+    for (i = 0; i < form.length; i++) {
+        data += form.elements[i].value + "  ";
+    }
+    alert(data);
+
+    //reset form
+    form.reset();
+    
+    alert('Thanks we got it!');
+    chrome.tabs.getCurrent(function (tab) {
+        chrome.tabs.remove(tab.id);
     });
+
 }
