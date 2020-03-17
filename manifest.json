@@ -16,16 +16,16 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/58e8fe8deb97430e819064c7.png",
-            "32": "images/58e8fe8deb97430e819064c7.png",
-            "48": "images/58e8fe8deb97430e819064c7.png",
-            "128": "images/58e8fe8deb97430e819064c7.png"
+            "16": "images/clock.png",
+            "32": "images/clock.png",
+            "48": "images/clock.png",
+            "128": "images/clock.png"
         }
     },
     "icons": {
-        "16": "images/58e8fe8deb97430e819064c7.png",
-        "32": "images/58e8fe8deb97430e819064c7.png",
-        "48": "images/58e8fe8deb97430e819064c7.png",
-        "128": "images/58e8fe8deb97430e819064c7.png"
+        "16": "images/clock.png",
+        "32": "images/clock.png",
+        "48": "images/clock.png",
+        "128": "images/clock.png"
     }
 }
