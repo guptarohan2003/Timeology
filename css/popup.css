@@ -5,7 +5,8 @@ body {
 h1 {
     background-image: linear-gradient(to right, red,orange);
     padding: 7px;
-    font-family: "OCR A Std";
+    /* //font-family: "OCR A Std"; */
+    font: "Chalkduster";
     text-align: center;
     border-radius: 20px;
     border: 2px solid rgb(2, 2, 2);
