@@ -6,10 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function btnSubmitHandler() {
 
     var form = document.forms["myForm"];
-    var counter = 0;
+    chrome.storage.local.set({val : 1});
+    value = parseInt(val);
     var data = "";
     var i;
-    if(counter < 2){
+    if(value < 3){
     for (i = 0; i < form.length; i++) {
         data += form.elements[i].value + "  ";
     }
@@ -22,7 +23,7 @@ function btnSubmitHandler() {
     chrome.tabs.getCurrent(function (tab) {
         chrome.tabs.remove(tab.id);
     });
-    counter ++;
+    value ++;
     }else{
         alert(" You Have submitted too many times already ");
     }
