@@ -6,15 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function btnSubmitHandler() {
 
     var form = document.forms["myForm"];
-<<<<<<< HEAD
-    var val;
-    chrome.storage.local.set({val : 0});
-    value = parseInt(val);
-    var data = "";x
-=======
     
     var data = "";
->>>>>>> 1141cf10039b35e7062adf56ed7676f6787b9f9e
     var i;
 
     for (i = 0; i < form.length; i++) {
