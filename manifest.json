@@ -6,7 +6,8 @@
     "permissions": [
         "declarativeContent",
         "storage",
-        "activeTab"
+        "activeTab",
+        "cookies"
     ],
     "background" :{
         "scripts": ["Script/background.js"],
