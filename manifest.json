@@ -6,7 +6,6 @@
     "permissions": [
         "declarativeContent",
         "storage",
-        "activeTab",
         "tabs"
     ],
     "background" :{
@@ -27,18 +26,5 @@
         "32": "images/58e8fe8deb97430e819064c7.png",
         "48": "images/58e8fe8deb97430e819064c7.png",
         "128": "images/58e8fe8deb97430e819064c7.png"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://fuhsd.schoology.com/"
-            ],
-            "js": [
-                "Script/btn.js"
-            ],
-            "run_at": "document_end"
-            
-        }
-    ]
-    
+    }
 }
