@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function btnSubmitHandler() {
 
     var form = document.forms["myForm"];
-
+ 
     var data = "";
     var i;
 
