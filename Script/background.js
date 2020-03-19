@@ -1,7 +1,7 @@
 
 'use strict';
 chrome.runtime.onInstalled.addListener(function () {
-
+    
     //7 classes
     // chrome.storage.sync.set({ class1: 'lol' });
     // chrome.storage.sync.set({ class2: 'lol' });
