@@ -6,13 +6,8 @@
     "permissions": [
         "declarativeContent",
         "storage",
-<<<<<<< HEAD
-        "tabs" 
-
-=======
         "tabs",
         "http://localhost/*"
->>>>>>> 99c5cb40a7c7d1f4b0b25666fa4e50e1055ae787
     ],
     "background" :{
         "scripts": ["Script/background.js"],
