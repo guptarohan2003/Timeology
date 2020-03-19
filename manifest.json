@@ -6,8 +6,8 @@
     "permissions": [
         "declarativeContent",
         "storage",
-        "tabs"
-
+        "tabs",
+        "http://localhost/*"
     ],
     "background" :{
         "scripts": ["Script/background.js"],

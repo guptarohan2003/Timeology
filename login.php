@@ -1,3 +1,4 @@
+<?php
 require_once('libraries/schoology_php_sdk/SchoologyApi.class.php');
 
 $consumer_key = 'a90055145d5152769cc2b82f1ae8497305e72ad4e';
@@ -15,6 +16,7 @@ $login = $schoology->validateLogin();
 // was received or it was invalid.
 if(!$login){
   // Stop script execution
+  //alert("No login information was received. Try loading this application again from within Schoology.");
   print 'No login information was received. Try loading this application again from within Schoology.';
   exit;
 }
@@ -37,3 +39,4 @@ if(!isset($_SESSION['schoology']['uid'])){
 }
 
 header('Location: ' . $_REQUEST['RelayState']);
+?>
