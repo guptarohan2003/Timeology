@@ -38,9 +38,15 @@ chrome.runtime.onInstalled.addListener(function () {
     }); 
 });
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+chrome.tabs.onInstalled.addListener(function(tabId, changeInfo, tab){
     if(changeInfo.url.localeCompare('https://fuhsd.schoology.com/courses') == 0){
-        alert('sdfsd');
+        alert('sdfsd')
+        $(document).ready(function(){
+             var classes = [];
+             for( i = 0; i < 8; i++){
+                 classes[i] = $("course-title").val()x
+             }
+        }
     }
 });
 
