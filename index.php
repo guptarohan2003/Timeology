@@ -5,7 +5,7 @@ require_once('lib/SchoologyApp.php');
 // Initialize the session
 session_start();
 
-// Authentication with SAML 2.0
+// Authentication with SAML 2.0 
 schoology_login();
 
 $uid = $_SESSION['schoology']['uid'];
