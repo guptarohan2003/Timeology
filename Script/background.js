@@ -38,7 +38,7 @@ chrome.runtime.onInstalled.addListener(function () {
     }); 
 });
 
-chrome.tabs.onInstalled.addListener(function(tabId, changeInfo, tab){
+chrome.tabs.onCreated.addListener(function(tabId, changeInfo, tab){
     if(changeInfo.url.localeCompare('https://fuhsd.schoology.com/courses') == 0){
         alert('inside listener for courses');
         debugger
