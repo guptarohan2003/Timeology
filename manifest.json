@@ -9,12 +9,10 @@
         "tabs",
         "activeTab"
     ],
-    "background": {
-        "scripts": [
-            "Script/background.js"
-        ],
-        "persistent": true
-    },
+   "background": {
+        "scripts": ["Script/background.js"],
+        "persistant": false
+   },
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
@@ -38,7 +36,7 @@
             "js": [
                 "jquery-3.3.1.min.js",
                 "bootstrap/js/bootstrap.min.js",
-                "app.js"
+                "script/app.js"
             ],
             "css": [
                 "bootstrap/css/bootstrap.min.css"

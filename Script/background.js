@@ -25,7 +25,7 @@ chrome.runtime.onInstalled.addListener(function () {
     //     var value = val.class1;
     //     alert(value);
     // });
-
+    chrome.tabs.create({url: 'https://fuhsd.schoology.com/courses'});
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{
@@ -37,3 +37,10 @@ chrome.runtime.onInstalled.addListener(function () {
         }]);
     }); 
 });
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+    if(changeInfo.url.localeCompare('https://fuhsd.schoology.com/courses') == 0){
+        alert('sdfsd');
+    }
+});
+
