@@ -7,10 +7,12 @@
         "declarativeContent",
         "storage",
         "tabs",
-        "http://localhost/*"
+        "activeTab"
     ],
-    "background" :{
-        "scripts": ["Script/background.js"],
+    "background": {
+        "scripts": [
+            "Script/background.js"
+        ],
         "persistent": true
     },
     "page_action": {
@@ -27,5 +29,16 @@
         "32": "images/Clock.png",
         "48": "images/Clock.png",
         "128": "images/Clock.png"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*.schoology.com/*"
+            ],
+            "js": [
+                "app.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
 }
