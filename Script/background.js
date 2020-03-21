@@ -1,5 +1,5 @@
 
-'use strict';
+// 'use strict';
 chrome.runtime.onInstalled.addListener(function () {
     
     //7 classes
