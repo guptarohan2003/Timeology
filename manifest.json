@@ -33,7 +33,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://fuhsd.schoology.com/courses"
+                "https://fuhsd.schoology.com/*"
             ],
             "js": [
                 "jquery-3.3.1.min.js",
