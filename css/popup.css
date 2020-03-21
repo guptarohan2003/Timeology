@@ -22,6 +22,15 @@ div {
 
 }
 
+div {
+  text-align: center;
+  width: 400px;
+  background-image: linear-gradient(to right, rgb(241, 238, 18), rgb(255, 0, 0));
+  padding: 15px;
+  border-radius: 10px;
+
+}
+
 #hours {
     width: 4em;
 }
