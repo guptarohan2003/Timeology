@@ -13,7 +13,7 @@ h1 {
     color: rgb(14, 12, 12);
     font-style: oblique;
 }
-message {
+div {
     text-align: center;
     width: 400px;
     background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 0, 0));
@@ -24,7 +24,7 @@ message {
 time {
   text-align: center;
   width: 400px;
-  background-image: linear-gradient(to right, rgb(229, 241, 56), rgb(255, 0, 0));
+  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 0, 0));
   padding: 15px;
   border-radius: 10px;
 
