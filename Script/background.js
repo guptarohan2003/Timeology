@@ -40,7 +40,12 @@ chrome.runtime.onInstalled.addListener(function () {
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
     if(changeInfo.url.localeCompare('https://fuhsd.schoology.com/courses') == 0){
-        alert('sdfsd');
+        alert('inside listener for courses');
+        debugger
+        $(document).ready(function(){
+            var list = $('body').find('.courses-listing listing mycourses');
+            console.log(list.clone().html());
+        });
     }
 });
 
