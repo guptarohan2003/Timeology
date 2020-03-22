@@ -36,7 +36,7 @@
             "js": [
                 "jquery-3.3.1.min.js",
                 "bootstrap/js/bootstrap.min.js",
-                "script/app.js"
+                "script/assignmentRead.js"
             ],
             "css": [
                 "bootstrap/css/bootstrap.min.css"
