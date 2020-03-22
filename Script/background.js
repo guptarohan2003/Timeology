@@ -1,6 +1,4 @@
-
-// 'use strict';
-chrome.runtime.onInstalled.addListener(function () {
+chrome.runtime.onInstalled.addListener(function (details) {
     
     //7 classes
     // chrome.storage.sync.set({ class1: 'lol' });
@@ -38,15 +36,12 @@ chrome.runtime.onInstalled.addListener(function () {
     }); 
 });
 
-chrome.tabs.onInstalled.addListener(function(tabId, changeInfo, tab){
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab){
+    //debugger
     if(changeInfo.url.localeCompare('https://fuhsd.schoology.com/courses') == 0){
-        alert('sdfsd')
-        $(document).ready(function(){
-             var classes = [];
-             for( i = 0; i < 8; i++){
-                 classes[i] = $("course-title").val()x
-             }
-        }
+        //debugger
+        chrome.tabs.executeScript({file: 'script/courseRead.js'});
     }
 });
+
 
