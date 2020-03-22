@@ -34,8 +34,8 @@ function btnSubmitHandler() {
     chrome.storage.sync.set({ time5: atime5.toString() });
     var atime6 = parseInt(form.elements[16].value) * 60 + parseInt(form.elements[17].value);
     chrome.storage.sync.set({ time6: atime6.toString() });
-    var atime7 = parseInt(form.elements[20].value)*60 + parseInt(form.elements[21].value);
-    chrome.storage.sync.set({ time7: atime7.toString() });
+    //var atime7 = parseInt(form.elements[20].value)*60 + parseInt(form.elements[21].value);
+    //chrome.storage.sync.set({ time7: atime7.toString() });
 
     alert(data);
 

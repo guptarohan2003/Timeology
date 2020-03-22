@@ -47,7 +47,7 @@ $(document).ready(function () {
         console.log(value.class7);
     })
 
-    chrome.storage.sync.get(['class1'], function(val){
+    chrome.storage.sync.get(['class3'], function(val){
         var value = val.class1;
         alert(value);
     })
