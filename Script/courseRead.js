@@ -3,27 +3,50 @@ $(document).ready(function () {
     var courses = [];
 
     //for each courses title push into array
-    $(".course-title").each(function(index, content){
+    $(".course-title").each(function (index, content) {
         var str = content.innerHTML;
+        str = str.substring(0, str.length - 7);
         courses.push(str);
+        // if(index = 0){
+
+        // }
     });
+    //$(".course-title").first().append('<p>sdjkhfjkshdjhdsjhfl<p>');
 
     //for each print courses content
-    courses.forEach(function(item, index){
-        console.log(item);
-    });
-    //console.log();
-    var str = courses[0].toString();
-    chrome.storage.sync.set({ class1:  str});
-    chrome.storage.sync.set({ class2: 'lol' });
-    chrome.storage.sync.set({ class3: 'lol' });
-    chrome.storage.sync.set({ class4: 'lol' });
-    chrome.storage.sync.set({ class5: 'lol' });
-    chrome.storage.sync.set({ class6: 'lol' });
-    chrome.storage.sync.set({ class7: 'lol' });
+    // courses.forEach(function (item, index) {
+    //     console.log(item);
+    // });
 
-    chrome.storage.sync.get(['class1'], function(value){
-        console.log(value);
+    //store class in chrome sync storage
+    chrome.storage.sync.set({ class1: courses[0].toString() });
+    chrome.storage.sync.set({ class2: courses[1].toString() });
+    chrome.storage.sync.set({ class3: courses[2].toString() });
+    chrome.storage.sync.set({ class4: courses[3].toString() });
+    chrome.storage.sync.set({ class5: courses[4].toString() });
+    chrome.storage.sync.set({ class6: courses[5].toString() });
+    chrome.storage.sync.set({ class7: courses[6].toString() });
+
+    //console.log every class name
+    chrome.storage.sync.get(['class1'], function (value) {
+        console.log(value.class1);
     })
-    //console.log();
+    chrome.storage.sync.get(['class2'], function (value) {
+        console.log(value.class2);
+    })
+    chrome.storage.sync.get(['class3'], function (value) {
+        console.log(value.class3);
+    })
+    chrome.storage.sync.get(['class4'], function (value) {
+        console.log(value.class4);
+    })
+    chrome.storage.sync.get(['class5'], function (value) {
+        console.log(value.class5);
+    })
+    chrome.storage.sync.get(['class6'], function (value) {
+        console.log(value.class6);
+    })
+    chrome.storage.sync.get(['class7'], function (value) {
+        console.log(value.class7);
+    })
 });
