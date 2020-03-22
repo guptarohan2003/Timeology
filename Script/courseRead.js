@@ -1,13 +1,12 @@
 $(document).ready(function () {
     //debugger
-    alert('inside courseRead');
     //courses array
     var courses = [];
 
     //for each courses title push into array
     $(".course-title").each(function (index, content) {
         var str = content.innerHTML;
-        str = str.substring(0, str.length - 7);
+        str = str.substring(0, str.length);
         courses.push(str);
     });
 
@@ -47,4 +46,11 @@ $(document).ready(function () {
     chrome.storage.sync.get(['class7'], function (value) {
         console.log(value.class7);
     })
-});
+
+    chrome.storage.sync.get(['class3'], function(val){
+        var value = val.class1;
+        alert(value);
+    })
+
+    coureseRead.js = true;
+})

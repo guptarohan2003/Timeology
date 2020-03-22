@@ -1,6 +1,9 @@
 // Pure JS:
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
+    if(courseRead.js = true){
+        document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
+
+    }
 });
 
 function btnSubmitHandler() {
@@ -34,13 +37,18 @@ function btnSubmitHandler() {
     chrome.storage.sync.set({ time5: atime5.toString() });
     var atime6 = parseInt(form.elements[16].value) * 60 + parseInt(form.elements[17].value);
     chrome.storage.sync.set({ time6: atime6.toString() });
-    // var atime7 = parseInt(form.elements[20].value)*60 + parseInt(form.elements[21].value);
-    // chrome.storage.sync.set({ time7: atime7.toString() });
+    //var atime7 = parseInt(form.elements[20].value)*60 + parseInt(form.elements[21].value);
+    //chrome.storage.sync.set({ time7: atime7.toString() });
 
     alert(data);
 
     //reset form
     form.reset();
+
+    chrome.storage.sync.get(['time2'], function(val){
+        var t2 = val.time2;
+        alert(t2);
+    });
 
     alert('Thanks we got it!');
     //kill tab

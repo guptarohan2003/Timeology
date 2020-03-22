@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <script src="Script/form_input.js"></script>
-    <link rel="stylesheet" href="css/popup.css">
-
+  <script src="Script/form_input.js"></script>
+  <script src = "Script/inLineScript.js"></script>
+  <link rel="stylesheet" href="css/form.css">
 </head>
 
 <body>
@@ -12,6 +12,9 @@
     <div>
         <form id="myForm">
             <label for="subject">Subject:</label>
+            <select>
+                <option id = "A" value= "class1"> Class </option>
+            </select>
             <label for="hours">Hours:</label>
             <select id="hours" name="hours" required>
                 <option value="0">0</option>
@@ -34,7 +37,9 @@
 
     <div>
         <label for="subject">Subject:</label>
-
+        <select>
+            <option id = "B" value= "class2"> Class </option>
+        </select>
         <label for="hours">Hours:</label>
         <select id="hours" name="hours" required>
             <option value="0">0</option>
@@ -57,7 +62,9 @@
     <div>
 
         <label for="subject">Subject:</label>
-
+        <select>
+                <option id = "C" value= "class3"> Class </option>
+        </select>
         <label for="hours">Hours:</label>
         <select id="hours" name="hours" required>
             <option value="0">0</option>
@@ -80,7 +87,9 @@
     <div>
         <label for="subject">Subject:</label>
         </select>
-
+        <select>
+                <option id = "D" value= "class4"> Class </option>
+         </select>
         <label for="hours">Hours:</label>
         <select id="hours" name="hours" required>
             <option value="0">0</option>
@@ -104,8 +113,9 @@
     <div>
 
         <label for="subject">Subject:</label>
-        
-
+        <select>
+                <option id = "E" value= "class5"> Class </option>
+         </select>
         <label for="hours">Hours:</label>
         <select id="hours" name="hours" required>
             <option value="0">0</option>
@@ -127,7 +137,9 @@
     </div>
     <div>
         <label for="subject">Subject:</label>
-
+        <select>
+                <option id = "F" value= "class6"> Class </option>
+        </select>
         <label for="hours">Hours:</label>
         <select id="hours" name="hours" required>
             <option value="0">0</option>
@@ -147,6 +159,31 @@
             <option value="50">50</option>
         </select>
         </form>
+    </div>
+    <div>
+         <label for="subject">Subject:</label>
+            <select>
+                    <option id = "G" value= "class7"> Class </option>
+            </select>
+            <label for="hours">Hours:</label>
+            <select id="hours" name="hours" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+    
+            <label for="minutes">Minutes:</label>
+            <select id="minutes" name="minutes" required>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+            </select>
+            </form>
     </div>
     <button id="btn_submit"><span>Submit</span></button>
 </body>
