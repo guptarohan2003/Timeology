@@ -1,6 +1,5 @@
 $(document).ready(function () {
     //debugger
-    alert('inside courseRead');
     //courses array
     var courses = [];
 
@@ -47,4 +46,10 @@ $(document).ready(function () {
     chrome.storage.sync.get(['class7'], function (value) {
         console.log(value.class7);
     })
-});
+
+    chrome.storage.sync.get(['class1'], function(val){
+        var value = val.class1;
+    })
+    alert(value);
+
+})

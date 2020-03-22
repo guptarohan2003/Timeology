@@ -55,5 +55,8 @@
                 "bootstrap/css/bootstrap.min.css"
             ]
         }
-    ]
+    ],
+
+    "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
+
 }
