@@ -6,7 +6,7 @@ $(document).ready(function () {
     //for each courses title push into array
     $(".course-title").each(function (index, content) {
         var str = content.innerHTML;
-        str = str.substring(0, str.length);
+        str = str.substring(0, str.length - 7);
         courses.push(str);
     });
 
@@ -47,10 +47,10 @@ $(document).ready(function () {
         console.log(value.class7);
     })
 
-    chrome.storage.sync.get(['class3'], function(val){
-        var value = val.class1;
-        alert(value);
-    })
+    // chrome.storage.sync.get(['class3'], function(val){
+    //     var value = val.class3;
+    //     alert(value);
+    // })
 
-    coureseRead.js = true;
+    chrome.storage.sync.set({ coursesRead: 'true' });
 })
