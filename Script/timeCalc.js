@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     chrome.storage.sync.get(['time4'], function(val){
-        var t4 = val.time4;
+        var t4 = val.time4c;
         total += (t4)
     });
 
