@@ -14,12 +14,12 @@ function btnSubmitHandler() {
         data += form.elements[i].value + "  ";
     }
 
-    chrome.storage.sync.set({ class1: form.elements[0].value.toString() });
-    chrome.storage.sync.set({ class2: form.elements[3].value.toString() });
-    chrome.storage.sync.set({ class3: form.elements[6].value.toString() });
-    chrome.storage.sync.set({ class4: form.elements[9].value.toString() });
-    chrome.storage.sync.set({ class5: form.elements[12].value.toString() });
-    chrome.storage.sync.set({ class6: form.elements[15].value.toString() });
+    // chrome.storage.sync.set({ class1: form.elements[0].value.toString() });
+    // chrome.storage.sync.set({ class2: form.elements[3].value.toString() });
+    // chrome.storage.sync.set({ class3: form.elements[6].value.toString() });
+    // chrome.storage.sync.set({ class4: form.elements[9].value.toString() });
+    // chrome.storage.sync.set({ class5: form.elements[12].value.toString() });
+    // chrome.storage.sync.set({ class6: form.elements[15].value.toString() });
     //chrome.storage.sync.set({ class7: form.elements[0].value.toString() });
 
     var atime1 = parseInt(form.elements[1].value) * 60 + parseInt(form.elements[2].value);

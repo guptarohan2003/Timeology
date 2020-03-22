@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    //debugger
+    alert('inside courseRead');
     //courses array
     var courses = [];
 
@@ -7,11 +9,7 @@ $(document).ready(function () {
         var str = content.innerHTML;
         str = str.substring(0, str.length - 7);
         courses.push(str);
-        // if(index = 0){
-
-        // }
     });
-    //$(".course-title").first().append('<p>sdjkhfjkshdjhdsjhfl<p>');
 
     //for each print courses content
     // courses.forEach(function (item, index) {
