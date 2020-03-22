@@ -25,7 +25,6 @@ chrome.runtime.onInstalled.addListener(function (details) {
     // });
     chrome.storage.sync.set({ coursesRead: 'false' });
 
-
     chrome.tabs.create({ url: 'https://fuhsd.schoology.com/courses' });
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
