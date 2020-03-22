@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var read = val.coursesRead;
             if(read == "false"){
                 document.getElementById("go_to_form").innerHTML = "Click me to go to Your courses page";
-                chrome.tabs.create({ url: 'https://fuhsd.schoology.com/courses')
+                chrome.tabs.create({ url: "https://fuhsd.schoology.com/courses" });
             }else{
-                document.getElementById("go_to_form").innerHTML = "Click me to go to the form"
-                chrome.tabs.create({ url: 'form.html')
+                document.getElementById("go_to_form").innerHTML = "Click me to go to the form";
+                chrome.tabs.create({ url: "form.html" });
             }
         });
     });
