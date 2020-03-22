@@ -42,6 +42,11 @@ function btnSubmitHandler() {
     //reset form
     form.reset();
 
+    chrome.storage.sync.get(['time2'], function(val){
+        var t2 = val.time2;
+        alert(t2);
+    });
+
     alert('Thanks we got it!');
     //kill tab
     chrome.tabs.getCurrent(function (tab) {
