@@ -36,13 +36,24 @@
             "js": [
                 "jquery-3.3.1.min.js",
                 "bootstrap/js/bootstrap.min.js",
-                "script/app.js",
+                "script/app.js"
+            ],
+            "css": [
+                "bootstrap/css/bootstrap.min.css"
+            ]
+        },
+        {
+            "matches": [
+                "https://fuhsd.schoology.com/courses*"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "bootstrap/js/bootstrap.min.js",
                 "script/courseRead.js"
             ],
             "css": [
                 "bootstrap/css/bootstrap.min.css"
-            ],
-            "run_at": "document_idle"
+            ]
         }
     ]
 }
