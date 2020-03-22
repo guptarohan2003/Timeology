@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     chrome.storage.sync.get(['class1'], function(val){
         var value = val.class1;
+        alert(value);
     })
-    alert(value);
 
 })
