@@ -52,4 +52,5 @@ $(document).ready(function () {
         alert(value);
     })
 
+    coureseRead.js = true;
 })

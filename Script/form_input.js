@@ -1,6 +1,9 @@
 // Pure JS:
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
+    if(courseRead.js = true){
+        document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
+
+    }
 });
 
 function btnSubmitHandler() {
