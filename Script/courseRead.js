@@ -6,7 +6,7 @@ $(document).ready(function () {
     //for each courses title push into array
     $(".course-title").each(function (index, content) {
         var str = content.innerHTML;
-        str = str.substring(0, str.length - 7);
+        str = str.substring(0, str.length);
         courses.push(str);
     });
 
