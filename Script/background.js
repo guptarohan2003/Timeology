@@ -24,7 +24,7 @@ chrome.runtime.onInstalled.addListener(function () {
     // chrome.storage.sync.get(['class1'], function(val){
     //     var value = val.class1;
     //     alert(value);
-    // });
+    // }); 
     chrome.tabs.create({url: 'https://fuhsd.schoology.com/courses'});
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
