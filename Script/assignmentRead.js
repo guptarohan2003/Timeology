@@ -122,10 +122,17 @@ $(document).ready(function () {
         dataType: "json"
     });
 
-
     //create html text here that says time of hw
-    $("#right-column").prepend("<button>sdkfjsdjhfs</button>");
+    chrome.storage.sync.get(['totalT'], function (val) {
+        var totalZ = parseInt(val.totalT)
+        var hrs = Math.floor(totalZ / 60);
+        var min = totalZ % 60;
+        //document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
+        chrome.storage.sync.set({ totalT: '0' });
+        var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!";
+        $("#right-column").prepend('<!DOCTYPE html><html><head> <link rel="stylesheet" href="css/table.css"> <script src="Script/timeCalc.js"></script></head><body><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></body></html>');
 
+    });
 });
 
 

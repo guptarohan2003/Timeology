@@ -35,7 +35,7 @@
             ],
             "exclude_matches": ["https://fuhsd.schoology.com/courses*"],
             "js": [
-                "jquery-3.3.1.min.js",
+                "script/jquery-3.3.1.min.js",
                 "bootstrap/js/bootstrap.min.js",
                 "script/assignmentRead.js"
             ],
@@ -48,7 +48,7 @@
                 "https://fuhsd.schoology.com/courses*"
             ],
             "js": [
-                "jquery-3.3.1.min.js",
+                "script/jquery-3.3.1.min.js",
                 "bootstrap/js/bootstrap.min.js",
                 "script/courseRead.js"
             ],
