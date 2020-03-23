@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     //enabled
-    // chrome.storage.sync.get(['enabled'], function(val){
-    //     var value = val.enabled;
-    //     // if(value == 'true'){
-    //     //     document.getElementById("enableTimeology").innerHTML = 'Disable Timeology';
-    //     //     // enableTimeology();
-    //     // } else {
-    //     //     document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
-    //     //     // disableTimeology();
-    //     // }
-    // });
+    chrome.storage.sync.get(['enabled'], function(val){
+        var value = val.enabled;
+        if(value == 'true'){
+            document.getElementById("enableTimeology").innerHTML = 'Disable Timeology';
+            enableTimeology();
+        } else {
+            document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
+            disableTimeology();
+        }
+    });
     
     document.getElementById("enableTimeology").addEventListener("click", function () {
         if (document.getElementById("enableTimeology").innerHTML == 'Enable Timeology') {
