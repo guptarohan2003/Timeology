@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     
-    chrome.storage.sync.get(['time1numAssigments1'], function(val){
-        var time1 = parseInt(val.time1numAssigments1)
+    chrome.storage.sync.get(['numAssigments1'], function(val){
+        var time1 = parseInt(val.numAssigments1)
         chrome.storage.sync.get(['atime1'], function(val){
             var t1 = parseInt(val.atime1);
             var Time1 = time1 * t1;
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         
     });
-    chrome.storage.sync.get(['time1numAssigments2'], function(val){
-        var time2 = parseInt(val.time1numAssigments2)
+    chrome.storage.sync.get(['numAssigments2'], function(val){
+        var time2 = parseInt(val.numAssigments2)
         chrome.storage.sync.get(['atime2'], function(val){
             var t2 = parseInt(val.atime2);
             var Time2 = time2 * t2;
