@@ -62,6 +62,7 @@ function enableTimeology() {
 function disableTimeology() {
     document.getElementById("go_to_form").style.display = "none";
     document.getElementById("timedisplay").style.display = "none";
+
     // document.getElementById("time").style.display = "none";
     // chrome.tabs.reload();
 }
