@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     chrome.storage.sync.get(['numAssigments5'], function (val) {
-        var time5 = parseInt(val.numAssigments5)
+        var time5 = parseInt(val.numAssigments5);
+        alert(time5);
         chrome.storage.sync.get(['atime5'], function (val) {
             var t5 = parseInt(val.atime5);
             var Time5 = time5 * t5;
@@ -69,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     chrome.storage.sync.get(['numAssigments6'], function (val) {
-        var time6 = parseInt(val.numAssigments6)
+        var time6 = parseInt(val.numAssigments6);
+        alert(time6);
         chrome.storage.sync.get(['atime6'], function (val) {
             var t6 = parseInt(val.atime6);
             var Time6 = time6 * t6;
@@ -103,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var min = totalZ % 60;
         document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
         chrome.storage.sync.set({totalT: '0'});
-
     });
 
 });

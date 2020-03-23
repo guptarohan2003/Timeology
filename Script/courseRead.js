@@ -49,7 +49,7 @@ $(document).ready(function () {
             chrome.storage.sync.get(['class7'], function (value) {
                 console.log(value.class7);
             });
-
+            
             chrome.storage.sync.set({ coursesRead: 'true' }, function () {
                 alert('Thanks, we got your courses!! \nPS: Yes it\'s supposed to be this fast!');
                 chrome.runtime.sendMessage({greeting: "delete tab"});
