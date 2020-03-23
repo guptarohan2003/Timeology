@@ -2,6 +2,7 @@ body {
     background-color: rgb(255, 255, 255);;
 }
 
+
 h1 {
     background-image: linear-gradient(to right, red,orange);
     padding: 7px;
@@ -24,14 +25,7 @@ div {
     border-radius: 10px;
 
 }
-time {
-  text-align: center;
-  width: 400px;
-  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 0, 0));
-  padding: 15px;
-  border-radius: 10px;
 
-}
 #hours {
   width: 4em;
 }
