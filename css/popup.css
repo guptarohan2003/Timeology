@@ -28,7 +28,7 @@ body {
 }
 
 div{
-  background-image: linear-gradient(to left, rgb(3, 167, 173),orange);
+  background-image: linear-gradient(to left, rgb(173, 105, 3),rgb(255, 208, 0));
     width: 420px;
     font-size: 5mm;
     font-style: bold;
@@ -76,7 +76,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(211, 182, 18);
+  background-color: rgb(73, 211, 18);
   font-family: Cambria;
   font-size: larger;
 }
