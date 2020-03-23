@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     chrome.storage.sync.get(['totalT'], function (val) {
         var totalZ = parseInt(val.totalT)
-        document.getElementById("timedisplay").innerHTML = totalZ;
+        document.getElementById("timedisplay").innerHTML = "You have about " +  totalZ + " hrs of HW today";
 
     });
 
