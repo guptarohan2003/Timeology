@@ -13,6 +13,9 @@ h1 {
     color: rgb(14, 12, 12);
     font-style: oblique;
 }
+p {
+  color: red;
+}
 div {
     text-align: center;
     width: 400px;
