@@ -1,9 +1,7 @@
 // Pure JS:
 document.addEventListener('DOMContentLoaded', function () {
-    if(courseRead.js = true){
         document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
 
-    }
 });
 
 function btnSubmitHandler() {
@@ -44,11 +42,6 @@ function btnSubmitHandler() {
 
     //reset form
     form.reset();
-
-    chrome.storage.sync.get(['time2'], function(val){
-        var t2 = val.time2;
-        alert(t2);
-    });
 
     alert('Thanks we got it!');
     //kill tab
