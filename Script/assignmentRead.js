@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // console.log('before');
     $.ajax({
         type: "GET",
         url: '/home/upcoming_ajax',
@@ -120,5 +121,12 @@ $(document).ready(function () {
         },
         dataType: "json"
     });
+
+
+    //create html text here that says time of hw
+    $("#right-column").prepend("<button>sdkfjsdjhfs</button>");
+
 });
+
+
 

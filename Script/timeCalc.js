@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     chrome.storage.sync.get(['numAssigments1'], function (val) {
-        console.log(val.numAssigments1);
         var time1 = parseInt(val.numAssigments1)
         chrome.storage.sync.get(['atime1'], function (val) {
             var t1 = parseInt(val.atime1);
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
     chrome.storage.sync.get(['numAssigments2'], function (val) {
-        console.log(val.numAssigments2);
         var time2 = parseInt(val.numAssigments2)
         chrome.storage.sync.get(['atime2'], function (val) {
             var t2 = parseInt(val.atime2);
@@ -29,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
     chrome.storage.sync.get(['numAssigments5'], function (val) {
-        console.log(val.numAssigments5);
-        var time1 = parseInt(val.time1numAssigments1)
+        //alert(val.numAssigments5);
+        var time1 = parseInt(val.numAssigments5)
         chrome.storage.sync.get(['atime5'], function (val) {
-            var t1 = parseInt(val.atime1);
+            var t1 = parseInt(val.atime5);
             var Time1 = time1 * t1;
             chrome.storage.sync.get(['totalT'], function (val) {
                 var total = parseInt(val.totalT)
@@ -43,10 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-
     chrome.storage.sync.get(['totalT'], function (val) {
         var totalZ = parseInt(val.totalT)
-        document.getElementById("timedisplay").innerHTML = totalZ;
+        //alert(val.totalZ);
+        var hrs = Math.floor(totalZ/60);
+        var min = totalZ % 60;
+        document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
+        chrome.storage.sync.set({totalT: '0'});
 
     });
 
