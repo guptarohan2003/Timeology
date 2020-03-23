@@ -36,7 +36,7 @@ $(document).ready(function () {
             //prints courses name for each assignment posted
             var i;
             for (i = 0; i < assignments.length; i++) {
-                console.log(assignments[i]);
+                //console.log(assignments[i]);
             }
 
             //get num of assignments for each course
