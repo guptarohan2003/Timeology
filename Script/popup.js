@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
     //enabled
-    chrome.storage.sync.get(['enabled'], function(val){
-        var value = val.enabled;
-        if(value == 'true'){
-            if (document.getElementById("enableTimeology").innerHTML = 'Disable Timeology') 
-            enableTimeology();
-        } else {
-            document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
-            disableTimeology();
-        }
-    });
+    // chrome.storage.sync.get(['enabled'], function(val){
+    //     var value = val.enabled;
+    //     // if(value == 'true'){
+    //     //     document.getElementById("enableTimeology").innerHTML = 'Disable Timeology';
+    //     //     // enableTimeology();
+    //     // } else {
+    //     //     document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
+    //     //     // disableTimeology();
+    //     // }
+    // });
     
     document.getElementById("enableTimeology").addEventListener("click", function () {
         if (document.getElementById("enableTimeology").innerHTML == 'Enable Timeology') {
@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
             chrome.storage.sync.set({enabled: "false"});
             chrome.tabs.reload();
-
-
         }
     });
 
@@ -51,22 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function enableTimeology() {
-    // document.getElementById("time").style.display = "inline";
     document.getElementById("timedisplay").style.display = "inline";
     document.getElementById("go_to_form").style.display = "inline";
-    // chrome.storage.sync.get(['coursesRead'], function (val) {
-    //     var value = val.coursesRead;
-    //     if (val == "false") {
-    //         //chrome.tabs.create({ url: 'https://fuhsd.schoology.com/courses' });
-    //     }
-    // });
-
 }
 
 function disableTimeology() {
     document.getElementById("go_to_form").style.display = "none";
     document.getElementById("timedisplay").style.display = "none";
-
-    // document.getElementById("time").style.display = "none";
-    // chrome.tabs.reload();
 }
