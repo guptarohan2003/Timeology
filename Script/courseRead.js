@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //debugger
+    //
     //courses array
     var courses = [];
 
