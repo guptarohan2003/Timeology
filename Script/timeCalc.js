@@ -1,42 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
     
-    
-    chrome.storage.sync.get(['time1'], function(val){
-        var t1 = val.time1;
-        total += (t1);
+    chrome.storage.sync.get(['time1numAssigments1'], function(val){
+        var time1 = parseInt(val.time1numAssigments1)
+        chrome.storage.sync.get(['atime1'], function(val){
+            var t1 = parseInt(val.atime1);
+            var Time1 = time1 * t1;
+            chrome.storage.sync.get(['totalT'], function(val){
+            var total = parseInt(val.totalT)
+            total += Time1;
+            chrome.storage.sync.set({ totalT: total.toString()});
+            });
+        });
+        
     });
-
-    chrome.storage.sync.get(['time2'], function(val){
-        var t2 = val.time2;
-        total += (t2)
+    chrome.storage.sync.get(['time1numAssigments2'], function(val){
+        var time2 = parseInt(val.time1numAssigments2)
+        chrome.storage.sync.get(['atime2'], function(val){
+            var t2 = parseInt(val.atime2);
+            var Time2 = time2 * t2;
+            chrome.storage.sync.get(['totalT'], function(val){
+            var total2 = parseInt(val.totalT)
+            total2 += Time2;
+            chrome.storage.sync.set({ totalT: total2.toString()});
+            });
+        });
+        
     });
+        
 
-    chrome.storage.sync.get(['time3'], function(val){
-        var t3 = val.time3;
-        total += (t3)
+    chrome.storage.sync.get(['totalT'], function(val){
+        var totalZ = parseInt(val.totalT)
+        document.getElementById("time display").innerHTML = totalZ;
+
     });
-
-    chrome.storage.sync.get(['time4'], function(val){
-        var t4 = val.time4c;
-        total += (t4)
-    });
-
-    chrome.storage.sync.get(['time5'], function(val){
-        var t5 = val.time5;
-        total += (t5)
-    });
-
-    chrome.storage.sync.get(['time6'], function(val){
-        var t6 = val.time6;
-        total += (t6)
-    });
-
-    // chrome.storage.sync.get(['time7'], function(val){
-    //     var t7 = val.time7;
-    //     total += parseInt(t7)
-
-    // });
-
-    document.getElementById("timedisplay").innerHTML = "you have " + total/420 + "hrs of hw left today";
 
 });
