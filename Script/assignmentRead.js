@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // console.log('before');
     $.ajax({
         type: "GET",
         url: '/home/upcoming_ajax',
@@ -120,5 +121,17 @@ $(document).ready(function () {
         },
         dataType: "json"
     });
+
+    $("#right-column").prepend("<button>sdkfjsdjhfs</button>");
+
 });
+
+
+// $(document).load(function () {
+//     console.log('after');
+// });
+// $(window).on('load', function(){
+//     console.log('after');
+// });
+
 
