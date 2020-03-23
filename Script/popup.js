@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("go_to_form").innerHTML = "Click me to go to the form";
         }
     });
+    //enabled
     chrome.storage.sync.get(['enabled'], function(val){
         var value = val.enabled;
         if(value == 'true'){
@@ -24,10 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
             enableTimeology();
             document.getElementById("enableTimeology").innerHTML = "Disable Timeology";
             chrome.storage.sync.set({enabled: "true"});
+            chrome.tabs.reload();
+
         } else {
             disableTimeology();
             document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
             chrome.storage.sync.set({enabled: "false"});
+            chrome.tabs.reload();
+
 
         }
     });
@@ -49,7 +54,6 @@ function enableTimeology() {
     // document.getElementById("time").style.display = "inline";
     document.getElementById("timedisplay").style.display = "inline";
     document.getElementById("go_to_form").style.display = "inline";
-    // chrome.tabs.reload();
     // chrome.storage.sync.get(['coursesRead'], function (val) {
     //     var value = val.coursesRead;
     //     if (val == "false") {

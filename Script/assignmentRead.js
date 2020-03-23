@@ -129,9 +129,15 @@ $(document).ready(function () {
         var min = totalZ % 60;
         //document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
         chrome.storage.sync.set({ totalT: '0' });
-        var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!";
-        $("#right-column").prepend('<!DOCTYPE html><html><head> <link rel="stylesheet" href="css/table.css"> <script src="Script/timeCalc.js"></script></head><body><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></body></html>');
-
+        chrome.storage.sync.get(['enabled'], function (val) {
+            if (val.enabled == 'true') {
+                var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!";
+                $("#right-column").prepend('<div id="timeology time"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
+            } else {
+                // remove timestamp
+               
+            }
+        });
     });
 });
 
