@@ -127,11 +127,4 @@ $(document).ready(function () {
 });
 
 
-// $(document).load(function () {
-//     console.log('after');
-// });
-// $(window).on('load', function(){
-//     console.log('after');
-// });
-
 
