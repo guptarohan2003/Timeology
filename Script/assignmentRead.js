@@ -122,6 +122,8 @@ $(document).ready(function () {
         dataType: "json"
     });
 
+
+    //create html text here that says time of hw
     $("#right-column").prepend("<button>sdkfjsdjhfs</button>");
 
 });
