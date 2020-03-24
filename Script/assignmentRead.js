@@ -155,21 +155,18 @@ $(document).ready(function () {
                     
                                                     chrome.storage.sync.get(['numAssigments5'], function (val) {
                                                         var assig5 = parseInt(val.numAssigments5);
-                                                        // alert(time5);
                                                         chrome.storage.sync.get(['atime5'], function (val) {
                                                             var time5 = parseInt(val.atime5);
                                                             var at5 = time5 * assig5;
                     
                                                             chrome.storage.sync.get(['numAssigments6'], function (val) {
                                                                 var assig6 = parseInt(val.numAssigments6);
-                                                                //alert(time5);
                                                                 chrome.storage.sync.get(['atime6'], function (val) {
                                                                     var time6 = parseInt(val.atime6);
                                                                     var at6 = time6 * assig6;
                     
                                                                     chrome.storage.sync.get(['numAssigments7'], function (val) {
                                                                         var assig7 = parseInt(val.numAssigments7);
-                                                                        // alert(time5);
                                                                         chrome.storage.sync.get(['atime7'], function (val) {
                                                                             var time7 = parseInt(val.atime7);
                                                                             var at7 = time7 * assig7;
@@ -181,8 +178,9 @@ $(document).ready(function () {
                                                                                 var hrs = Math.floor(totalZ / 60);
                                                                                 var min = totalZ % 60;
                                                                                 console.log(hrs + "  " + min);
-                                                                                var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!     - TIMEOLOGY";
+                                                                                var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!   <br>  - TIMEOLOGY";
                                                                                 $("#right-column").prepend('<div id="timeology time"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
+                                                                                // document.getElementById('timedisplay').innerHTML = 'You have about ' + hrs + " hrs and " + min + ' min of HW today!';
                                                                             });
                                                                         });
                     
