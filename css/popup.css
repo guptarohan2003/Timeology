@@ -51,15 +51,6 @@ h1 {
     font-style: oblique;
 }
 
-#hours {
-  width: 4em;
-}
-
-#minutes {
-  width: 4em;
-}
-
-
 button {
   display: inline-block;
   border-radius: 7px;

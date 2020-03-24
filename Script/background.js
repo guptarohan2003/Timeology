@@ -45,4 +45,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.greeting == "delete tab") {
         chrome.tabs.remove(sender.tab.id);
     }
+    if (request.greeting == "fuhsd url") {
+        //chrome.tabs.remove(sender.tab.id);
+        chrome.tabs.update(sender.tab.id, { url: 'https://fuhsd.schoology.com' });
+    }
+    if (request.greeting == "courses url") {
+        chrome.tabs.update({ url: 'https://fuhsd.schoology.com/courses' });
+    }
 });
