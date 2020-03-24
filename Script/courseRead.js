@@ -8,9 +8,11 @@ $(document).ready(function () {
 
             //for each courses title push into array
             $(".course-title").each(function (index, content) {
-                var str = content.innerHTML;
+                if(".course-title" != "No Class 7th"){
+                    var str = content.innerHTML;
                 str = str.substring(0, str.length - 7);
                 courses.push(str);
+                }
             });
 
             //for each print courses content
