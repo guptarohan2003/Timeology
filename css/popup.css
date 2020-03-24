@@ -21,7 +21,7 @@
 }
 
 body {
-  width: 375px;
+  width: 300px;
   -webkit-animation: bgcolor 20s infinite;
   animation: bgcolor 10s ease-in-out infinite;
   -webkit-animation-direction: alternate;
@@ -30,7 +30,7 @@ body {
 
 div{
     backface-visibility: hidden;
-    width: 375px;
+    width: 300px;
     font-size: 5mm;
     font-style: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -69,7 +69,7 @@ button {
   text-align: center;
   font-size: 12px;
   padding: 6px;
-  width: 375px;
+  width: 300px;
   height: 26px;
   transition: all 0.5s;
   cursor: pointer;
