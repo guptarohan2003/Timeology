@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Timeology",
     "version": "1.0",
-    "description": "Timeology helps you organize your time.",
+    "description": "Timeology is personalized tool that uses your help to provide you with an accurate estimate of how much work you have so that you can better manage your time",
     "permissions": [
         "declarativeContent",
         "storage",
