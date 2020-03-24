@@ -35,11 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("G").innerHTML = value;
     });
     document.getElementById("btn_submit").addEventListener("click", btnSubmitHandler);
-
+    // chrome.storage.tabs.getCurrent(function(tab){
+    //     var str = tab.id;
+    //     chrome.storage.sync.set({tabId: str.toString()});
+    // });
 });
 
 function btnSubmitHandler() {
-
+    
     var form = document.forms["myForm"];
 
     // var data = "";
@@ -88,4 +91,6 @@ function btnSubmitHandler() {
     alert('Thanks we got it!');
     //kill tab
     chrome.runtime.sendMessage({ greeting: "delete tab" });
+    chrome.runtime.sendMessage({ greeting: "reload tab" });
+
 }

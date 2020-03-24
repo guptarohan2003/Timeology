@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // chrome.storage.sync.get(['coursesRead'], function (val) {
-    //     var read = val.coursesRead;
-    //     if (read == "true") {
-    //         document.getElementById("go_to_form").innerHTML = "Click me to go to the form";
-    //     }
-    // });
+    //store tabid
+
+    console.log('DOMContentLoaded')
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        debugger
+        var currTab = tabs[0];
+        if (currTab) { // Sanity check
+          /* do stuff */
+        }
+      });
+
     chrome.storage.sync.get(['enabled'], function (val) {
         var value = val.enabled;
         if (value == 'true') {
@@ -45,11 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function enableTimeology() {
+    console.log('enableTimeology')
     document.getElementById("timedisplay").style.display = "inline";
     document.getElementById("go_to_form").style.display = "inline";
 }
 
 function disableTimeology() {
+    console.log('disableTimeology')
     document.getElementById("go_to_form").style.display = "none";
     document.getElementById("timedisplay").style.display = "none";
 }

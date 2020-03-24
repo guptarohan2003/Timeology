@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //
+    // chrome.runtime.sendMessage({ greeting: "store tab" });
     //courses array
     chrome.storage.sync.get(['coursesRead'], function (val) {
         var haveRead = val.coursesRead;
