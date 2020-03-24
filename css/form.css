@@ -1,6 +1,6 @@
 
 body {
-  background-color: rgb(228, 138, 20);
+  background-image: linear-gradient(to bottom right, red, yellow);
 }
 
 p{
@@ -21,6 +21,7 @@ h1 {
     font-style: oblique;
 }
 div {
+    margin: auto;
     text-align: center;
     backface-visibility: hidden;
     border-radius: 10px;
