@@ -46,81 +46,36 @@ $(document).ready(function () {
 
                     //get num of assignments for each course
                     chrome.storage.sync.get(['class1'], function (val) {
+                        debugger
                         var value = val.class1;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments1: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments1');
                     });
+
                     chrome.storage.sync.get(['class2'], function (val) {
+                        debugger
                         var value = val.class2;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments2: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments2');
                     });
+
                     chrome.storage.sync.get(['class3'], function (val) {
                         var value = val.class3;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments3: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments3');
                     });
                     chrome.storage.sync.get(['class4'], function (val) {
                         var value = val.class4;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments4: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments4');
                     });
                     chrome.storage.sync.get(['class5'], function (val) {
                         var value = val.class5;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments5: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments5');
                     });
                     chrome.storage.sync.get(['class6'], function (val) {
                         var value = val.class6;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments6: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments6');
                     });
                     chrome.storage.sync.get(['class7'], function (val) {
                         var value = val.class7;
-                        var num = 0;
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            if (assignments[i] == value.trim()) {
-                                num++;
-                            }
-                        }
-                        chrome.storage.sync.set({ numAssigments7: num.toString() });
+                        setAssignmentKey(value, assignments, 'numAssigments7');
                     });
                 },
                 dataType: "json"
@@ -208,3 +163,15 @@ $(document).ready(function () {
     });
 
 });
+
+function setAssignmentKey(value, assignments, keyName) {
+    debugger
+    var num = 0;
+    var i;
+    for (i = 0; i < assignments.length; i++) {
+        if (assignments[i] == value.trim()) {
+            num++;
+        }
+    }
+    chrome.storage.sync.set({ keyName : num.toString() });
+}

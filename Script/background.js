@@ -21,7 +21,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
     //how to get key value
     // chrome.storage.sync.get(['class1'], function(val){
     //     var value = val.class1;
-    //     alert(value);
+    //     // alert(value);
     // });
 
     chrome.storage.sync.set({ enabled: "false" });
@@ -53,9 +53,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         chrome.tabs.update({ url: 'https://fuhsd.schoology.com/courses' });
     }
     if (request.greeting == "reload tab") {
-        alert('reload url');        
+        // alert('reload url');        
         chrome.storage.sync.get(['tabId'], function (val) {
-            alert(val.tabId);  
+            // alert(val.tabId);  
             chrome.tabs.reload(+val.tabId);
         });
     }
