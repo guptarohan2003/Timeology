@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         debugger
         var currTab = tabs[0];
-        if (currTab) { // Sanity check
-          /* do stuff */
+        if (currTab) { 
+          chrome.storage.sync.set({ tabId: currTab.id.toString() });           
         }
       });
 
@@ -50,13 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function enableTimeology() {
-    console.log('enableTimeology')
     document.getElementById("timedisplay").style.display = "inline";
     document.getElementById("go_to_form").style.display = "inline";
 }
 
 function disableTimeology() {
-    console.log('disableTimeology')
     document.getElementById("go_to_form").style.display = "none";
     document.getElementById("timedisplay").style.display = "none";
 }

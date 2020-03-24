@@ -88,9 +88,10 @@ function btnSubmitHandler() {
     //reset form
     form.reset();
 
-    alert('Thanks we got it!');
+    // alert('Thanks we got it!');
+    chrome.runtime.sendMessage({ greeting: "reload tab" });
+
     //kill tab
     chrome.runtime.sendMessage({ greeting: "delete tab" });
-    chrome.runtime.sendMessage({ greeting: "reload tab" });
 
 }

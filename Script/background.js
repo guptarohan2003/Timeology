@@ -52,19 +52,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.greeting == "courses url") {
         chrome.tabs.update({ url: 'https://fuhsd.schoology.com/courses' });
     }
-    if (request.greeting == "reload url") {
+    if (request.greeting == "reload tab") {
+        alert('reload url');        
         chrome.storage.sync.get(['tabId'], function (val) {
-            chrome.tabs.reload(val.tabId);
+            alert(val.tabId);  
+            chrome.tabs.reload(+val.tabId);
         });
     }
-    // if (request.greeting == "store tab") {
-    //     chrome.storage.tabs.getCurrent(function (tab) {
-    //         var str = tab.id;
-    //         chrome.storage.sync.set({ tabId: str.toString() });
-    //         debugger
-    //         console.log(str);
-    //     });
-    // }
 });
 
 chrome.tabs.onUpdated.addListener(function(tab){
