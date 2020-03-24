@@ -46,36 +46,25 @@ $(document).ready(function () {
 
                     //get num of assignments for each course
                     chrome.storage.sync.get(['class1'], function (val) {
-                        debugger
-                        var value = val.class1;
-                        setAssignmentKey(value, assignments, 'numAssigments1');
+                        setAssignmentKey(val.class1, assignments, 'numAssigments1');
                     });
-
                     chrome.storage.sync.get(['class2'], function (val) {
-                        debugger
-                        var value = val.class2;
-                        setAssignmentKey(value, assignments, 'numAssigments2');
+                        setAssignmentKey(val.class2, assignments, 'numAssigments2');
                     });
-
                     chrome.storage.sync.get(['class3'], function (val) {
-                        var value = val.class3;
-                        setAssignmentKey(value, assignments, 'numAssigments3');
+                        setAssignmentKey(val.class3, assignments, 'numAssigments3');
                     });
                     chrome.storage.sync.get(['class4'], function (val) {
-                        var value = val.class4;
-                        setAssignmentKey(value, assignments, 'numAssigments4');
+                        setAssignmentKey(val.class4, assignments, 'numAssigments4');
                     });
                     chrome.storage.sync.get(['class5'], function (val) {
-                        var value = val.class5;
-                        setAssignmentKey(value, assignments, 'numAssigments5');
+                        setAssignmentKey(val.class5, assignments, 'numAssigments5');
                     });
                     chrome.storage.sync.get(['class6'], function (val) {
-                        var value = val.class6;
-                        setAssignmentKey(value, assignments, 'numAssigments6');
+                        setAssignmentKey(val.class6, assignments, 'numAssigments6');
                     });
                     chrome.storage.sync.get(['class7'], function (val) {
-                        var value = val.class7;
-                        setAssignmentKey(value, assignments, 'numAssigments7');
+                        setAssignmentKey(val.class7, assignments, 'numAssigments7');
                     });
                 },
                 dataType: "json"
@@ -89,47 +78,47 @@ $(document).ready(function () {
                         chrome.storage.sync.get(['atime1'], function (val) {
                             var time1 = parseInt(val.atime1);
                             var at1 = time1 * assig1;
-                    
+
                             chrome.storage.sync.get(['numAssigments2'], function (val) {
                                 var assig2 = parseInt(val.numAssigments2)
                                 chrome.storage.sync.get(['atime2'], function (val) {
                                     var time2 = parseInt(val.atime2);
                                     var at2 = assig2 * time2;
-                    
+
                                     chrome.storage.sync.get(['numAssigments3'], function (val) {
                                         var assig3 = parseInt(val.numAssigments3)
                                         chrome.storage.sync.get(['atime3'], function (val) {
                                             var time3 = parseInt(val.atime3);
                                             var at3 = time3 * assig3;
-                    
+
                                             chrome.storage.sync.get(['numAssigments4'], function (val) {
                                                 var assig4 = parseInt(val.numAssigments4)
                                                 chrome.storage.sync.get(['atime4'], function (val) {
                                                     var time4 = parseInt(val.atime4);
                                                     var at4 = time4 * assig4;
-                    
+
                                                     chrome.storage.sync.get(['numAssigments5'], function (val) {
                                                         var assig5 = parseInt(val.numAssigments5);
                                                         chrome.storage.sync.get(['atime5'], function (val) {
                                                             var time5 = parseInt(val.atime5);
                                                             var at5 = time5 * assig5;
-                    
+
                                                             chrome.storage.sync.get(['numAssigments6'], function (val) {
                                                                 var assig6 = parseInt(val.numAssigments6);
                                                                 chrome.storage.sync.get(['atime6'], function (val) {
                                                                     var time6 = parseInt(val.atime6);
                                                                     var at6 = time6 * assig6;
-                    
+
                                                                     chrome.storage.sync.get(['numAssigments7'], function (val) {
                                                                         var assig7 = parseInt(val.numAssigments7);
                                                                         chrome.storage.sync.get(['atime7'], function (val) {
                                                                             var time7 = parseInt(val.atime7);
                                                                             var at7 = time7 * assig7;
-                    
+
                                                                             chrome.storage.sync.get(['totalT'], function (val) {
                                                                                 var totalZ = val.totalT;
                                                                                 totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;
-                    
+
                                                                                 var hrs = Math.floor(totalZ / 60);
                                                                                 var min = totalZ % 60;
                                                                                 console.log(hrs + "  " + min);
@@ -138,23 +127,23 @@ $(document).ready(function () {
                                                                                 // document.getElementById('timedisplay').innerHTML = 'You have about ' + hrs + " hrs and " + min + ' min of HW today!';
                                                                             });
                                                                         });
-                    
+
                                                                     });
                                                                 });
-                    
+
                                                             });
                                                         });
-                    
+
                                                     });
                                                 });
-                    
+
                                             });
                                         });
-                    
+
                                     });
                                 });
                             });
-                    
+
                         });
                     });
                 }
@@ -173,5 +162,5 @@ function setAssignmentKey(value, assignments, keyName) {
             num++;
         }
     }
-    chrome.storage.sync.set({ keyName : num.toString() });
+    chrome.storage.sync.set({ keyName: num.toString() });
 }
