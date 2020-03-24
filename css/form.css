@@ -27,10 +27,9 @@ body {
   animation-direction: alternate;
 }
 p{
-  font-family: fantasy;
+  font-family: Arial, Helvetica, sans-serif;
   font: outline;
   font-size: 5mm;
-  background-color: #ffa704
 }
 
 h1 {
