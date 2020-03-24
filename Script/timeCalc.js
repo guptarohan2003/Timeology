@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //alert(val.totalZ);
         var hrs = Math.floor(totalZ/60);
         var min = totalZ % 60;
-        document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
+        // document.getElementById("timedisplay").innerHTML = "You have about " +  hrs + " hrs and "+ min + " min of HW today! Good Luck!!";
         chrome.storage.sync.set({totalT: '0'});
     });
 

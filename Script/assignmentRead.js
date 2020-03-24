@@ -126,6 +126,7 @@ $(document).ready(function () {
                 },
                 dataType: "json"
             });
+
             
             //create html text here that says time of hw
             chrome.storage.sync.get(['totalT'], function (val) {
@@ -137,8 +138,7 @@ $(document).ready(function () {
                     if (val.enabled == 'true') {
                         var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!";
                         $("#right-column").prepend('<div id="timeology time"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
-                    }
-                    //else removes timestamp
+                    } //else removes timestamp
                 });
             });
         }
