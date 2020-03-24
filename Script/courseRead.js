@@ -8,10 +8,10 @@ $(document).ready(function () {
 
             //for each courses title push into array
             $(".course-title").each(function (index, content) {
-                if(".course-title" != "No Class 7th"){
-                    var str = content.innerHTML;
+                var str = content.innerHTML;
                 str = str.substring(0, str.length - 7);
-                courses.push(str);
+                if(str != "Flex Studies"){
+                    courses.push(str);
                 }
             });
 
