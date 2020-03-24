@@ -127,9 +127,6 @@ $(document).ready(function () {
             });
 
             //create html text here that says time of hw
-            // chrome.storage.sync.get(['totalT'], function (val) {
-            //     var totalZ = parseInt(val.totalT);
-            //     console.log('total time ' + totalZ);
             chrome.storage.sync.get(['enabled'], function (val) {
                 if (val.enabled == 'true') {
                     chrome.storage.sync.get(['numAssigments1'], function (val) {
