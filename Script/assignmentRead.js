@@ -184,7 +184,7 @@ $(document).ready(function () {
                                                                                 var hrs = Math.floor(totalZ / 60);
                                                                                 var min = totalZ % 60;
                                                                                 console.log(hrs + "  " + min);
-                                                                                var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!  -TIMEOLOGY";
+                                                                                var str = "You have about " + hrs + " hrs and " + min + " min of HW today! Good Luck!!     - TIMEOLOGY";
                                                                                 $("#right-column").prepend('<div id="timeology time"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
                                                                             });
                                                                         });

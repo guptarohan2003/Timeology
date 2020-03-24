@@ -21,6 +21,7 @@
 }
 
 body {
+  width: 375px;
   -webkit-animation: bgcolor 20s infinite;
   animation: bgcolor 10s ease-in-out infinite;
   -webkit-animation-direction: alternate;
