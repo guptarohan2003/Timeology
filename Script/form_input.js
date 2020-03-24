@@ -63,7 +63,7 @@ function btnSubmitHandler() {
     chrome.storage.sync.set({ atime5: atime5.toString() });
     var atime6 = parseInt(form.elements[10].value) * 60 + parseInt(form.elements[11].value);
     chrome.storage.sync.set({ atime6: atime6.toString() });
-    var atime7 = parseInt(form.elements[13].value) * 60 + parseInt(form.elements[14].value);
+    var atime7 = parseInt(form.elements[12].value) * 60 + parseInt(form.elements[13].value);
     chrome.storage.sync.set({ atime7: atime7.toString() });
 
     //storing all the project times
