@@ -29,7 +29,7 @@ body {
 
 div{
   background-image: linear-gradient(to left, rgb(173, 105, 3),rgb(255, 208, 0));
-    width: 420px;
+    width: 375px;
     font-size: 5mm;
     font-style: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -68,7 +68,7 @@ button {
   text-align: center;
   font-size: 12px;
   padding: 6px;
-  width: 420px;
+  width: 375px;
   height: 26px;
   transition: all 0.5s;
   cursor: pointer;
