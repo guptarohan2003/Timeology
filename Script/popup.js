@@ -1,14 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    //try {
-    //document.getElementById("enableTimeology").innerHTML == 'Enable Timeology' ? disableTimeology() : enableTimeology();
-    //}
     chrome.storage.sync.get(['coursesRead'], function (val) {
         var read = val.coursesRead;
         if (read == "true") {
             document.getElementById("go_to_form").innerHTML = "Click me to go to the form";
         }
     });
-    //enabled
     chrome.storage.sync.get(['enabled'], function(val){
         var value = val.enabled;
         if(value == 'true'){
