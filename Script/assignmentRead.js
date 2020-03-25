@@ -148,13 +148,18 @@ $(document).ready(function () {
                     });
                 }
             });
+
+            // var obj = $('.a...');
+            // $('.upcoming-list').append('<button>asddgsgdsd</button>');
+            // $('.upcoming-event').append('<button>asddgsgdsd</button>');
+            // console.log($('.upcoming-list'));
+            // console.log($('.upcoming-event'));
         }
     });
 
 });
 
 function setAssignmentKey(value, assignments, keyName) {
-    debugger
     var num = 0;
     var i;
     for (i = 0; i < assignments.length; i++) {
