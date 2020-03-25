@@ -11,12 +11,6 @@ select {
   border-radius: 4px;
   background-color: #f1f1f1;
 }
-p{
- font-size: 7mm;
-}
-.message{
-  font-size: 2mm;
-}
 
 h1 {
     background-image: linear-gradient(to right, red,orange);
