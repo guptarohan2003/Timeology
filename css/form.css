@@ -4,12 +4,9 @@ body {
 }
 
 select {
-  width: 10%;
-  size: 3mm;
-  padding: 16px;
-  border: 2px red;
-  border-radius: 4px;
-  background-color: #f1f1f1;
+  font-size: 12px;
+  background-color: DodgerBlue;
+  width: 200px;
 }
 
 h1 {
