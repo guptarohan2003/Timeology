@@ -11,21 +11,33 @@ select {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
-  background-color: black;
+  position: absolute;
+  width: 180px;
+  background-color: #555;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
+  padding: 2px;
+  border-radius: 5px;
   z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
+  opacity: 0;
+  transition: opacity .6s;
+  }
+  .tooltip:hover .tooltiptext {
   visibility: visible;
-}
+  opacity: 1;
+  }
+  .tooltip-top {
+  bottom: 90%;
+  margin-left: -60px;
+  }
+  .tooltip-left {
+  top: -5px;
+  right: 128%;
+  }
+  .tooltip-right {
+  top: -5px;
+  left: 125%;
+  }
 
 h1 {
     background-image: linear-gradient(to right, red,orange);
