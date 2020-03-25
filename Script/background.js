@@ -1,14 +1,5 @@
 chrome.runtime.onInstalled.addListener(function (details) {
 
-    //7 classes
-    // chrome.storage.sync.set({ class1: 'lol' });
-    // chrome.storage.sync.set({ class2: 'lol' });
-    // chrome.storage.sync.set({ class3: 'lol' });
-    // chrome.storage.sync.set({ class4: 'lol' });
-    // chrome.storage.sync.set({ class5: 'lol' });
-    // chrome.storage.sync.set({ class6: 'lol' });
-    // chrome.storage.sync.set({ class7: 'lol' });
-
     //7 times
     chrome.storage.sync.set({ atime1: '30' });
     chrome.storage.sync.set({ atime2: '30' });
@@ -26,9 +17,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
 
     chrome.storage.sync.set({ enabled: "false" });
     chrome.storage.sync.set({ coursesRead: 'false' });
-    chrome.storage.sync.set({ totalT: "0" });
-
-    // chrome.tabs.create({ url: 'https://fuhsd.schoology.com/courses' });
+    // chrome.storage.sync.set({ totalT: "0" });
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{

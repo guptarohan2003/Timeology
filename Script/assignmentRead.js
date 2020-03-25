@@ -4,12 +4,13 @@ $(document).ready(function () {
         var bool = val.coursesRead;
         if (bool == 'true') {
             //store num assignments for each course
+            // debugger
             $.ajax({
                 type: "GET",
                 url: '/home/upcoming_ajax',
                 data: '',
                 success: function (data) {
-
+                    // debugger
                     //array of each assignments course
                     var assignments = [];
                     // create a empty div, with content from ajax output
@@ -20,6 +21,7 @@ $(document).ready(function () {
 
                         // create a dummy object
                         var dummy = $('<div/>').html(element.outerHTML).contents();
+                        console.log(dummy);
                         var course = dummy.find('.realm-title-course');
                         if (course && course.length > 0 && course[0].outerText) {
                             //console.log(course[0].outerText);
@@ -99,18 +101,11 @@ $(document).ready(function () {
                 var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
                 var hrs = Math.floor(totalZ / 60);
                 var min = totalZ % 60;
-                console.log(hrs + "  " + min);
+                // console.log(hrs + "  " + min);
                 var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
                 $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
            
             });
-
-
-            // var obj = $('.a...');
-            // $('.upcoming-list').append('<button>asddgsgdsd</button>');
-            // $('.upcoming-event').append('<button>asddgsgdsd</button>');
-            // console.log($('.upcoming-list'));
-            // console.log($('.upcoming-event'));
         }
     });
 
