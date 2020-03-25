@@ -24,11 +24,11 @@ div {
     margin: auto;
     width: 35%;
     backface-visibility: hidden;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: antiquewhite;
-    border-radius: 14px;
-    border: 2px solid rgb(2, 2, 2);
+    /* border-radius: 10px; */
+    padding: 10px;
+    background-color: rgb(253, 253, 253);
+    /* border-radius: 14px;
+    border: 2px solid rgb(2, 2, 2); */
 
 }
 
@@ -55,6 +55,7 @@ button {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    margin: auto;
     
   }
   
