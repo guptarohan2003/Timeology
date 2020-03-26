@@ -21,7 +21,7 @@ select {
   z-index: 1;
   opacity: 0;
   transition: opacity .6s;
-  position:absolute;right:30px;top: 100px;
+  position:absolute;right:30px;top: 500px;
   }
   .tooltip:hover .tooltiptext {
   visibility: visible;
