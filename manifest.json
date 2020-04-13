@@ -6,8 +6,7 @@
     "permissions": [
         "declarativeContent",
         "storage",
-        "tabs",
-        "activeTab"
+        "tabs"
     ],
    "background": {
         "scripts": ["Script/background.js"],
@@ -59,5 +58,4 @@
     ],
 
     "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
-
 }
