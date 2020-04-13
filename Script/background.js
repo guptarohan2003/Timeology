@@ -1,6 +1,5 @@
 chrome.runtime.onInstalled.addListener(function (details) {
-
-    //7 times
+    //set default assignments time to 30
     chrome.storage.sync.set({ atime1: '30' });
     chrome.storage.sync.set({ atime2: '30' });
     chrome.storage.sync.set({ atime3: '30' });
@@ -9,15 +8,10 @@ chrome.runtime.onInstalled.addListener(function (details) {
     chrome.storage.sync.set({ atime6: '30' });
     chrome.storage.sync.set({ atime7: '30' });
 
-    //how to get key value
-    // chrome.storage.sync.get(['class1'], function(val){
-    //     var value = val.class1;
-    //     // alert(value);
-    // });
-
+    //whether timeology is enabled
     chrome.storage.sync.set({ enabled: "false" });
+    //whether courses have been read
     chrome.storage.sync.set({ coursesRead: 'false' });
-    // chrome.storage.sync.set({ totalT: "0" });
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{
@@ -31,33 +25,23 @@ chrome.runtime.onInstalled.addListener(function (details) {
 });
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    //delete form tab when submit
     if (request.greeting == "delete tab") {
         chrome.tabs.remove(sender.tab.id);
     }
+    //navigate to schoology home
     if (request.greeting == "fuhsd url") {
-        //chrome.tabs.remove(sender.tab.id);
         chrome.tabs.update(sender.tab.id, { url: 'https://fuhsd.schoology.com' });
     }
+    //navigate to read courses
     if (request.greeting == "courses url") {
         chrome.tabs.update({ url: 'https://fuhsd.schoology.com/courses' });
     }
+    //reload user's timology tab
     if (request.greeting == "reload tab") {
-        // alert('reload url');        
         chrome.storage.sync.get(['tabId'], function (val) {
-            // alert(val.tabId);  
             chrome.tabs.reload(+val.tabId);
-        });
-    }
-});
-
-chrome.tabs.onUpdated.addListener(function(tab){
-    var str = tab.url;
-    console.log('url:' + str);
-    if(str == 'https://fuhsd.schoology.com/courses'){
-        chrome.storage.tabs.getCurrent(function (tab) {
-            var str = tab.id;
-            chrome.storage.sync.set({ tabId: str.toString() });
-            console.log(str);
+            // chrome.tabs.goBack(+val.tabId);
         });
     }
 });

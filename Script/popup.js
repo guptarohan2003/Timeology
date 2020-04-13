@@ -1,14 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     //store tabid
-
-    console.log('DOMContentLoaded')
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        debugger
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         var currTab = tabs[0];
-        if (currTab) { 
-          chrome.storage.sync.set({ tabId: currTab.id.toString() });           
+        if (currTab) {
+            chrome.storage.sync.set({ tabId: currTab.id.toString() });
         }
-      });
+    });
 
     chrome.storage.sync.get(['enabled'], function (val) {
         var value = val.enabled;
@@ -39,20 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
             chrome.tabs.reload();
         }
     });
-    var ele = document.getElementById("go_to_form");
-    if(ele){
-        ele.addEventListener("click", function () {
-            chrome.tabs.create({ url: "form.html" });
-
-            // document.body.innerHTML += '<dialog>This is a dialog.<br><button>Close</button></dialog>';
-            // var dialog = document.querySelector("dialog")
-            // dialog.querySelector("button").addEventListener("click", function() {
-            //     dialog.close()
-            // })
-            // dialog.showModal()
-        });
-    }
-    
+    document.getElementById("go_to_form").addEventListener("click", function () {
+        chrome.tabs.create({ url: "form.html" });
+    });
 });
 
 
