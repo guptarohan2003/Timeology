@@ -5,6 +5,7 @@ $(document).ready(function () {
         var enable = val.enabled;
         if (bool == 'true' && enable == 'true') {
             //store num assignments for each course
+            var assignments = [];
             $.ajax({
                 type: "GET",
                 url: '/home/upcoming_ajax',
@@ -38,7 +39,7 @@ $(document).ready(function () {
                             //console.log(str.substring(0, cut - 1));
                         }
                     });
-
+                    // assignments.push('Spanish 4 H')
                     //prints courses name for each assignment posted
                     var i;
                     for (i = 0; i < assignments.length; i++) {
@@ -101,8 +102,6 @@ $(document).ready(function () {
                 },
                 dataType: "json"
             });
-
-            
         }
     });
 
@@ -117,4 +116,4 @@ function getOccurences(value, assignments){
         }
     }
     return num;
-}
+};
