@@ -16,17 +16,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/IMG_2499.jpg",
-            "32": "images/IMG_2499.jpg", 
-            "48": "images/IMG_2499.jpg",
-            "128": "images/IMG_2499.jpg"
+            "16": "images/IMG_2499.png",
+            "32": "images/IMG_2499.png", 
+            "48": "images/IMG_2499.png",
+            "128": "images/IMG_2499.png"
         }
     },
     "icons": {
-        "16": "images/IMG_2499.jpg",
-        "32": "images/IMG_2499.jpg",
-        "48": "images/IMG_2499.jpg",
-        "128": "images/IMG_2499.jpg"
+        "16": "images/IMG_2499.png",
+        "32": "images/IMG_2499.png",
+        "48": "images/IMG_2499.png",
+        "128": "images/IMG_2499.png"
     },
     "content_scripts": [
         {
