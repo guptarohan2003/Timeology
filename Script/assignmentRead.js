@@ -44,7 +44,7 @@ $(document).ready(function () {
                     for (i = 0; i < assignments.length; i++) {
                         console.log(assignments[i]);
                     }
-                    console.log(assignments.length);
+                    console.log('number of assigments: ' + assignments.length);
 
                     var class_array = [
                         'class1',
@@ -57,13 +57,6 @@ $(document).ready(function () {
                     ];
                     
                     chrome.storage.sync.get(class_array, function(val){
-                        // setAssignmentKey(val.class1, assignments, 'numAssigments1');
-                        // setAssignmentKey(val.class2, assignments, 'numAssigments2');
-                        // setAssignmentKey(val.class3, assignments, 'numAssigments3');
-                        // setAssignmentKey(val.class4, assignments, 'numAssigments4');
-                        // setAssignmentKey(val.class5, assignments, 'numAssigments5');
-                        // setAssignmentKey(val.class6, assignments, 'numAssigments6');
-                        // setAssignmentKey(val.class7, assignments, 'numAssigments7');
                         chrome.storage.sync.set({ numAssigments1: getOccurences(val.class1, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments2: getOccurences(val.class2, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments3: getOccurences(val.class3, assignments).toString() });
@@ -108,6 +101,8 @@ $(document).ready(function () {
                 },
                 dataType: "json"
             });
+
+            
         }
     });
 
@@ -123,13 +118,3 @@ function getOccurences(value, assignments){
     }
     return num;
 }
-// function setAssignmentKey(value, assignments, keyName) {
-//     var num = 0;
-//     var i;
-//     for (i = 0; i < assignments.length; i++) {
-//         if (assignments[i] == value.trim()) {
-//             num++;
-//         }
-//     }
-//     chrome.storage.sync.set({ keyName: num.toString() });
-// }
