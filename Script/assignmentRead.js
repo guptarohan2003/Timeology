@@ -1,8 +1,9 @@
 $(document).ready(function () {
     // console.log('before');
-    chrome.storage.sync.get(['coursesRead'], function (val) {
+    chrome.storage.sync.get(['coursesRead', 'enabled'], function (val) {
         var bool = val.coursesRead;
-        if (bool == 'true') {
+        var enable = val.enabled;
+        if (bool == 'true' && enable == 'true') {
             //store num assignments for each course
             // debugger
             $.ajax({
@@ -68,44 +69,78 @@ $(document).ready(function () {
                     chrome.storage.sync.get(['class7'], function (val) {
                         setAssignmentKey(val.class7, assignments, 'numAssigments7');
                     });
+                    var assign_array = [
+                        'numAssigments1',
+                        'numAssigments2',
+                        'numAssigments3',
+                        'numAssigments4',
+                        'numAssigments5',
+                        'numAssigments6',
+                        'numAssigments7',
+                        'atime1',
+                        'atime2',
+                        'atime3',
+                        'atime4',
+                        'atime5',
+                        'atime6',
+                        'atime7'
+                    ];
+        
+                    chrome.storage.sync.get(assign_array, function (items) {
+                        var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
+                        var at2 = parseInt(items.atime2) * parseInt(items.numAssigments2);
+                        var at3 = parseInt(items.atime3) * parseInt(items.numAssigments3);
+                        var at4 = parseInt(items.atime4) * parseInt(items.numAssigments4);
+                        var at5 = parseInt(items.atime5) * parseInt(items.numAssigments5);
+                        var at6 = parseInt(items.atime6) * parseInt(items.numAssigments6);
+                        var at7 = parseInt(items.atime7) * parseInt(items.numAssigments7);
+        
+                        var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
+                        var hrs = Math.floor(totalZ / 60);
+                        var min = totalZ % 60;
+                        // console.log(hrs + "  " + min);
+                        var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
+                        $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
+                   
+                    });
                 },
                 dataType: "json"
             });
 
-            var assign_array = [
-                'numAssigments1',
-                'numAssigments2',
-                'numAssigments3',
-                'numAssigments4',
-                'numAssigments5',
-                'numAssigments6',
-                'numAssigments7',
-                'atime1',
-                'atime2',
-                'atime3',
-                'atime4',
-                'atime5',
-                'atime6',
-                'atime7'
-            ];
+            // var assign_array = [
+            //     'numAssigments1',
+            //     'numAssigments2',
+            //     'numAssigments3',
+            //     'numAssigments4',
+            //     'numAssigments5',
+            //     'numAssigments6',
+            //     'numAssigments7',
+            //     'atime1',
+            //     'atime2',
+            //     'atime3',
+            //     'atime4',
+            //     'atime5',
+            //     'atime6',
+            //     'atime7'
+            // ];
 
-            chrome.storage.sync.get(assign_array, function (items) {
-                var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
-                var at2 = parseInt(items.atime2) * parseInt(items.numAssigments2);
-                var at3 = parseInt(items.atime3) * parseInt(items.numAssigments3);
-                var at4 = parseInt(items.atime4) * parseInt(items.numAssigments4);
-                var at5 = parseInt(items.atime5) * parseInt(items.numAssigments5);
-                var at6 = parseInt(items.atime6) * parseInt(items.numAssigments6);
-                var at7 = parseInt(items.atime7) * parseInt(items.numAssigments7);
+            // chrome.storage.sync.get(assign_array, function (items) {
+            //     var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
+            //     var at2 = parseInt(items.atime2) * parseInt(items.numAssigments2);
+            //     var at3 = parseInt(items.atime3) * parseInt(items.numAssigments3);
+            //     var at4 = parseInt(items.atime4) * parseInt(items.numAssigments4);
+            //     var at5 = parseInt(items.atime5) * parseInt(items.numAssigments5);
+            //     var at6 = parseInt(items.atime6) * parseInt(items.numAssigments6);
+            //     var at7 = parseInt(items.atime7) * parseInt(items.numAssigments7);
 
-                var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
-                var hrs = Math.floor(totalZ / 60);
-                var min = totalZ % 60;
-                // console.log(hrs + "  " + min);
-                var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
-                $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
+            //     var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
+            //     var hrs = Math.floor(totalZ / 60);
+            //     var min = totalZ % 60;
+            //     // console.log(hrs + "  " + min);
+            //     var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
+            //     $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
            
-            });
+            // });
         }
     });
 
