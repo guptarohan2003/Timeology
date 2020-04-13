@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Timeology",
     "version": "1.0",
-    "description": "Timeology is personalized tool that uses your help to provide you with an accurate estimate of how much work you have so that you can better manage your time",
+    "description": "Timeology is a personalized tool that uses your help to provide you with an accurate estimate of how much work you have so that you can better manage your time",
     "permissions": [
         "declarativeContent",
         "storage",
@@ -16,17 +16,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/Clock.png",
-            "32": "images/Clock.png",
-            "48": "images/Clock.png",
-            "128": "images/Clock.png"
+            "16": "images/IMG_2499.png",
+            "32": "images/IMG_2499.png", 
+            "48": "images/IMG_2499.png",
+            "128": "images/IMG_2499.png"
         }
     },
     "icons": {
-        "16": "images/Clock.png",
-        "32": "images/Clock.png",
-        "48": "images/Clock.png",
-        "128": "images/Clock.png"
+        "16": "images/IMG_2499.png",
+        "32": "images/IMG_2499.png",
+        "48": "images/IMG_2499.png",
+        "128": "images/IMG_2499.png"
     },
     "content_scripts": [
         {
