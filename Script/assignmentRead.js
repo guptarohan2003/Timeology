@@ -12,7 +12,7 @@ $(document).ready(function () {
                 data: '',
                 success: function (data) {
                     //array of each assignments course
-                    var assignments = [];
+                    // var assignments = [];
                     // create a empty div, with content from ajax output
                     var object = $('<div/>').html(data.html).contents();
 
@@ -39,6 +39,41 @@ $(document).ready(function () {
                             //console.log(str.substring(0, cut - 1));
                         }
                     });
+
+                    // get assignments that are overdue
+                    // $.ajax({
+                    //     type: "GET",
+                    //     url: 'https://fuhsd.schoology.com/home/overdue_submissions_ajax',
+                    //     data2: '',
+                    //     success: function (data2) {
+                    //         var object = $('<div/>').html(data.html).contents();
+                    //         var h4_list = $(object[1]).find('h4');
+                    //         $.each(h4_list, function (index, element) {
+                    //             var dummy = $('<div/>').html(element.outerHTML).contents();
+                    //             console.log(dummy);
+                    //             var course = dummy.find('.realm-title-course');
+                    //             if (course && course.length > 0 && course[0].outerText) {
+                    //                 //console.log(course[0].outerText);
+                    //                 var str = course[0].outerText;
+                    //                 var cut = -1;
+                    //                 var i;
+                    //                 for (i = 0; i < str.length; i++) {
+                    //                     if (str.charAt(i) == '-') {
+                    //                         cut = i;
+                    //                         break;
+                    //                     }
+                    //                 }
+                    //                 str = str.substring(0, cut - 1);
+                    //                 assignments.push(str);
+                    //                 //console.log(str.substring(0, cut - 1));
+                    //             }
+                    //         })
+                    //     },
+                    //     dataType: "json"
+                    // });
+
+
+
                     // assignments.push('Spanish 4 H')
                     //prints courses name for each assignment posted
                     var i;
@@ -49,15 +84,15 @@ $(document).ready(function () {
 
                     var class_array = [
                         'class1',
-                        'class2', 
-                        'class3', 
-                        'class4', 
-                        'class5', 
-                        'class6', 
+                        'class2',
+                        'class3',
+                        'class4',
+                        'class5',
+                        'class6',
                         'class7'
                     ];
-                    
-                    chrome.storage.sync.get(class_array, function(val){
+
+                    chrome.storage.sync.get(class_array, function (val) {
                         chrome.storage.sync.set({ numAssigments1: getOccurences(val.class1, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments2: getOccurences(val.class2, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments3: getOccurences(val.class3, assignments).toString() });
@@ -65,7 +100,7 @@ $(document).ready(function () {
                         chrome.storage.sync.set({ numAssigments5: getOccurences(val.class5, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments6: getOccurences(val.class6, assignments).toString() });
                         chrome.storage.sync.set({ numAssigments7: getOccurences(val.class7, assignments).toString() });
-                        
+
                     });
 
                     var assign_array = [
@@ -84,7 +119,7 @@ $(document).ready(function () {
                         'atime6',
                         'atime7',
                     ];
-                    chrome.storage.sync.get(assign_array, function (items) {                        
+                    chrome.storage.sync.get(assign_array, function (items) {
                         var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
                         var at2 = parseInt(items.atime2) * parseInt(items.numAssigments2);
                         var at3 = parseInt(items.atime3) * parseInt(items.numAssigments3);
@@ -92,8 +127,8 @@ $(document).ready(function () {
                         var at5 = parseInt(items.atime5) * parseInt(items.numAssigments5);
                         var at6 = parseInt(items.atime6) * parseInt(items.numAssigments6);
                         var at7 = parseInt(items.atime7) * parseInt(items.numAssigments7);
-        
-                        var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
+
+                        var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;
                         var hrs = Math.floor(totalZ / 60);
                         var min = totalZ % 60;
                         var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
@@ -102,12 +137,15 @@ $(document).ready(function () {
                 },
                 dataType: "json"
             });
+            // chrome.storage.sync.get(['sdf'], function(val){
+            //     console.log(assignments.length);
+            // })
         }
     });
 
 });
 
-function getOccurences(value, assignments){
+function getOccurences(value, assignments) {
     var num = 0;
     var i;
     for (i = 0; i < assignments.length; i++) {
