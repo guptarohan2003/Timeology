@@ -40,10 +40,11 @@ $(document).ready(function () {
                     });
 
                     //prints courses name for each assignment posted
-                    // var i;
-                    // for (i = 0; i < assignments.length; i++) {
-                    //     //console.log(assignments[i]);
-                    // }
+                    var i;
+                    for (i = 0; i < assignments.length; i++) {
+                        console.log(assignments[i]);
+                    }
+                    console.log(assignments.length);
 
                     var class_array = [
                         'class1',
@@ -56,13 +57,21 @@ $(document).ready(function () {
                     ];
                     
                     chrome.storage.sync.get(class_array, function(val){
-                        setAssignmentKey(val.class1, assignments, 'numAssigments1');
-                        setAssignmentKey(val.class2, assignments, 'numAssigments2');
-                        setAssignmentKey(val.class3, assignments, 'numAssigments3');
-                        setAssignmentKey(val.class4, assignments, 'numAssigments4');
-                        setAssignmentKey(val.class5, assignments, 'numAssigments5');
-                        setAssignmentKey(val.class6, assignments, 'numAssigments6');
-                        setAssignmentKey(val.class7, assignments, 'numAssigments7');
+                        // setAssignmentKey(val.class1, assignments, 'numAssigments1');
+                        // setAssignmentKey(val.class2, assignments, 'numAssigments2');
+                        // setAssignmentKey(val.class3, assignments, 'numAssigments3');
+                        // setAssignmentKey(val.class4, assignments, 'numAssigments4');
+                        // setAssignmentKey(val.class5, assignments, 'numAssigments5');
+                        // setAssignmentKey(val.class6, assignments, 'numAssigments6');
+                        // setAssignmentKey(val.class7, assignments, 'numAssigments7');
+                        chrome.storage.sync.set({ numAssigments1: getOccurences(val.class1, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments2: getOccurences(val.class2, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments3: getOccurences(val.class3, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments4: getOccurences(val.class4, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments5: getOccurences(val.class5, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments6: getOccurences(val.class6, assignments).toString() });
+                        chrome.storage.sync.set({ numAssigments7: getOccurences(val.class7, assignments).toString() });
+                        
                     });
 
                     var assign_array = [
@@ -79,9 +88,9 @@ $(document).ready(function () {
                         'atime4',
                         'atime5',
                         'atime6',
-                        'atime7'
+                        'atime7',
                     ];
-                    chrome.storage.sync.get(assign_array, function (items) {
+                    chrome.storage.sync.get(assign_array, function (items) {                        
                         var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
                         var at2 = parseInt(items.atime2) * parseInt(items.numAssigments2);
                         var at3 = parseInt(items.atime3) * parseInt(items.numAssigments3);
@@ -93,7 +102,6 @@ $(document).ready(function () {
                         var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;                
                         var hrs = Math.floor(totalZ / 60);
                         var min = totalZ % 60;
-                        // console.log(hrs + "  " + min);
                         var str = "You have about <b>" + hrs + " hrs and " + min + " min</b> of HW today! Good Luck!!   <br>  - TIMEOLOGY";
                         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of HW Today</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
                     });
@@ -105,7 +113,7 @@ $(document).ready(function () {
 
 });
 
-function setAssignmentKey(value, assignments, keyName) {
+function getOccurences(value, assignments){
     var num = 0;
     var i;
     for (i = 0; i < assignments.length; i++) {
@@ -113,5 +121,15 @@ function setAssignmentKey(value, assignments, keyName) {
             num++;
         }
     }
-    chrome.storage.sync.set({ keyName: num.toString() });
+    return num;
 }
+// function setAssignmentKey(value, assignments, keyName) {
+//     var num = 0;
+//     var i;
+//     for (i = 0; i < assignments.length; i++) {
+//         if (assignments[i] == value.trim()) {
+//             num++;
+//         }
+//     }
+//     chrome.storage.sync.set({ keyName: num.toString() });
+// }
