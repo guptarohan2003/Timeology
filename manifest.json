@@ -15,17 +15,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/icon.png",
-            "32": "images/icon.png", 
-            "48": "images/icon.png",
-            "128": "images/icon.png"
+            "16": "images/SC.png",
+            "32": "images/SC.png", 
+            "48": "images/SC.png",
+            "128": "images/SC.png"
         }
     },
     "icons": {
-        "16": "images/icon.png",
-        "32": "images/icon.png",
-        "48": "images/icon.png",
-        "128": "images/icon.png"
+        "16": "images/SC.png",
+        "32": "images/SC.png",
+        "48": "images/SC.png",
+        "128": "images/SC.png"
     },
     "content_scripts": [
         {
