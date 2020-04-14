@@ -1,12 +1,12 @@
 chrome.runtime.onInstalled.addListener(function (details) {
     //set default assignments time to 30
-    chrome.storage.sync.set({ atime1: '30' });
-    chrome.storage.sync.set({ atime2: '30' });
-    chrome.storage.sync.set({ atime3: '30' });
-    chrome.storage.sync.set({ atime4: '30' });
-    chrome.storage.sync.set({ atime5: '30' });
-    chrome.storage.sync.set({ atime6: '30' });
-    chrome.storage.sync.set({ atime7: '30' });
+    chrome.storage.sync.set({ atime1: '20' });
+    chrome.storage.sync.set({ atime2: '20' });
+    chrome.storage.sync.set({ atime3: '20' });
+    chrome.storage.sync.set({ atime4: '20' });
+    chrome.storage.sync.set({ atime5: '20' });
+    chrome.storage.sync.set({ atime6: '20' });
+    chrome.storage.sync.set({ atime7: '20' });
 
     //whether timeology is enabled
     chrome.storage.sync.set({ enabled: "false" });
@@ -41,7 +41,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.greeting == "reload tab") {
         chrome.storage.sync.get(['tabId'], function (val) {
             chrome.tabs.reload(+val.tabId);
-            // chrome.tabs.goBack(+val.tabId);
         });
     }
 });

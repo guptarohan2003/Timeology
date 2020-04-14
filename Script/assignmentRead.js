@@ -49,7 +49,7 @@ $(document).ready(function () {
                     //     // console.log('date: ' + dates[i] + ' class: ' + assignments[i]);
                     // }
                     // console.log('number of assignments: ' + assignments.length);
-                    
+
                     var i;
                     var today = [];
                     for (i = 0; i < dates.length; i++) {
@@ -141,7 +141,8 @@ function printTime() {
         'numTodayAssigments4',
         'numTodayAssigments5',
         'numTodayAssigments6',
-        'numTodayAssigments7'
+        'numTodayAssigments7',
+        'doneForm'
     ];
     chrome.storage.sync.get(assign_array, function (items) {
         var at1 = parseInt(items.atime1) * parseInt(items.numAssigments1);
@@ -167,7 +168,8 @@ function printTime() {
         totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;
         var hrsToday = Math.floor(totalZ / 60);
         var minToday = totalZ % 60;
-        var str = "You have about <b>" + hrsToday + " hrs and " + minToday + " min</b> of HW <b>today</b>  <br> <b> and about " + hrs + " hrs and " + min + " min</b> of HW in the <b>coming future</b>! Good Luck!!   <br>  - TIMEOLOGY";
+        var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>today</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>coming future</b>! Good Luck!!   <br>  - TIMEOLOGY';
+        if(items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time found in the popup for a more personalized guess...'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
     });
 }

@@ -27,18 +27,25 @@ function btnSubmitHandler() {
     var form = document.forms["myForm"];
 
     var atime1 = parseInt(form.elements[0].value) * 60 + parseInt(form.elements[1].value);
+    if(atime1 != 0)
     chrome.storage.sync.set({ atime1: atime1.toString() });
     var atime2 = parseInt(form.elements[2].value) * 60 + parseInt(form.elements[3].value);
+    if(atime2 != 0)
     chrome.storage.sync.set({ atime2: atime2.toString() });
     var atime3 = parseInt(form.elements[4].value) * 60 + parseInt(form.elements[5].value);
+    if(atime3 != 0)
     chrome.storage.sync.set({ atime3: atime3.toString() });
     var atime4 = parseInt(form.elements[6].value) * 60 + parseInt(form.elements[7].value);
+    if(atime4 != 0)
     chrome.storage.sync.set({ atime4: atime4.toString() });
     var atime5 = parseInt(form.elements[8].value) * 60 + parseInt(form.elements[9].value);
+    if(atime5 != 0)
     chrome.storage.sync.set({ atime5: atime5.toString() });
     var atime6 = parseInt(form.elements[10].value) * 60 + parseInt(form.elements[11].value);
+    if(atime6 != 0)
     chrome.storage.sync.set({ atime6: atime6.toString() });
     var atime7 = parseInt(form.elements[12].value) * 60 + parseInt(form.elements[13].value);
+    if(atime7 != 0)
     chrome.storage.sync.set({ atime7: atime7.toString() });
 
     //reset form
@@ -47,4 +54,5 @@ function btnSubmitHandler() {
     alert('Thanks we got it!');
     chrome.runtime.sendMessage({ greeting: "reload tab" });
     chrome.runtime.sendMessage({ greeting: "delete tab" });
+    chrome.storage.sync.set({doneForm:"true"});
 }
