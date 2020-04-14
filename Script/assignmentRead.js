@@ -54,7 +54,7 @@ $(document).ready(function () {
                             month[9] = "October";
                             month[10] = "November";
                             month[11] = "December";
-                            var monthNum;
+                            var monthNum = -1;
                             var i;
                             for(i = 0; i < 12; i++){
                                 var m = month[i];
@@ -63,51 +63,42 @@ $(document).ready(function () {
                                     break;
                                 }
                             }
+                            // duedate = 3;
+                            // monthNum = 7;
                             dates.push(duedate);
                             dates.push(monthNum);
                             // console.log(monthNum)
                         }
                     });
-                    //next day number 
-                    var date = new Date();
-                    var month = date.getMonth();
-                    // var lastday;
-                    // if(month == 4 || month == 6 || month == 9 || month == 11)
-                    // lastday = 30;
-                    // else 
-                    // lastday = 31;
 
-                    date.setDate(10);
-                    date = new Date(2020, 4, 1, 1, 1, 1, 1);
+                    var date = new Date();
+
+                    // date.setDate(10);
+                    // date = new Date(2020, 7, 1, 1, 1, 1, 1);
+
+                    //dayofweek
                     var due = date.getDay();
                     var originalDate = date.getDate();
+                    //set upcoming due date
                     if (due == 5)
                         date.setDate(date.getDate() + 3);
                     else if (due == 6)
                         date.setDate(date.getDate() + 2);
                     else
                         date.setDate(date.getDate() + 1);
+
                     var day = date.getDate();
-
-                    var nextMonth = false;
-                    if (day < originalDate) nextMonth = true;
-
-
-                    // var i;
-                    // for (i = 0; i < assignments.length; i++) {
-                    //     // consoleb.log('date: ' + dates[i] + ' class: ' + assignments[i]);
-                    // }
-                    // console.log('number of assignments: ' + assignments.length);
-
+                    var month = date.getMonth();
+                    
                     var i;
                     var today = [];
-                    for (i = 0; i < dates.length; i+2) {
-                        // if (dates[i].indexOf(day.toString()) != -1) today.push(assignments[i]);
-
-                        if (parseInt(dates[i]) <= day || nextMonth) today.push(assignments[i]);
-                        else if(nextMonth || month != dates[i + 1]) today.push(assignments[i]);
-                        // else if(day == 1 && dates[i] !)
+                    for (i = 0; i < dates.length; i += 2) {
+                        if(month == dates[i + 1]){
+                            if(parseInt(dates[i]) <= day) today.push(assignments[i]);
+                        }
+                        else if(month > dates[i+1]) today.push(assignments[i]);
                     }
+
                     //set numAssignment for today
                     setNumAssignments(today, true);
                     //set numTotalAssignment for total
