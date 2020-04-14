@@ -35,6 +35,11 @@ $(document).ready(function () {
                             assigDate = assigDate.substring(start + 2);
                             var end = assigDate.indexOf(',');
                             assigDate = assigDate.substring(0, end);
+
+                            var end = assigDate.indexOf(' ');
+                            console.log(assigDate.substring(end + 1) + 'e');
+                            // assigDate = assigDate.substring(end + 1);
+                            
                             dates.push(assigDate);
                         }
                     });
@@ -87,7 +92,7 @@ function setNumAssignments(assignments, today) {
         var e = getOccurences(val.class5, assignments).toString();
         var f = getOccurences(val.class6, assignments).toString();
         var g = getOccurences(val.class7, assignments).toString();
-        
+
         if (!today) {
             chrome.storage.sync.set({ numAssigments1: a });
             chrome.storage.sync.set({ numAssigments2: b });
@@ -171,12 +176,12 @@ function printTime(day) {
         var minToday = totalZ % 60;
 
         var datestr;
-        if(day == 1) datestr = "1st";
-        else if(day == 2) datestr = "2nd";
-        else if(day == 3) datestr = "3rd";
+        if (day == 1) datestr = "1st";
+        else if (day == 2) datestr = "2nd";
+        else if (day == 3) datestr = "3rd";
         else datestr = day + "th";
         var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>before the ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>coming future</b>! Good Luck!!   <br>  - TIMEOLOGY';
-        if(items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time form found in the popup for a more accurate guess...'
+        if (items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time form found in the popup for a more accurate guess...'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
     });
 }
