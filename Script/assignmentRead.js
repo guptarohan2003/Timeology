@@ -35,29 +35,63 @@ $(document).ready(function () {
                             assigDate = assigDate.substring(start + 2);
                             var end = assigDate.indexOf(',');
                             assigDate = assigDate.substring(0, end);
-
+                            console.log(assigDate);
                             var end = assigDate.indexOf(' ');
-                            console.log(assigDate.substring(end + 1) + 'e');
-                            assigDate = assigDate.substring(end + 1);
-                            
-                            dates.push(assigDate);
-                            // dates.push('19');
+                            // console.log(assigDate.substring(end + 1) + 'e');
+                            var duedate = assigDate.substring(end + 1);
+                            var duemonth = assigDate.substring(0, end);
+                            // console.log(duemonth);
+                            var month = [];
+                            month[0] = "January";
+                            month[1] = "February";
+                            month[2] = "March";
+                            month[3] = "April";
+                            month[4] = "May";
+                            month[5] = "June";
+                            month[6] = "July";
+                            month[7] = "August";
+                            month[8] = "September";
+                            month[9] = "October";
+                            month[10] = "November";
+                            month[11] = "December";
+                            var monthNum;
+                            var i;
+                            for(i = 0; i < 12; i++){
+                                var m = month[i];
+                                if(m.localeCompare(duemonth) == 0){
+                                    monthNum = i;
+                                    break;
+                                }
+                            }
+                            dates.push(duedate);
+                            dates.push(monthNum);
+                            // console.log(monthNum)
                         }
                     });
-
                     //next day number 
                     var date = new Date();
-                    date.setDate(30);
-                    var due = date.getDate();
-                    
-                    if(due == 5)
-                    date.setDate(date.getDate() + 3);
-                    else if(due == 6)
-                    date.setDate(date.getDate() + 2);
-                    else 
-                    date.setDate(date.getDate() + 1);
-                    
+                    var month = date.getMonth();
+                    // var lastday;
+                    // if(month == 4 || month == 6 || month == 9 || month == 11)
+                    // lastday = 30;
+                    // else 
+                    // lastday = 31;
+
+                    date.setDate(10);
+                    date = new Date(2020, 4, 1, 1, 1, 1, 1);
+                    var due = date.getDay();
+                    var originalDate = date.getDate();
+                    if (due == 5)
+                        date.setDate(date.getDate() + 3);
+                    else if (due == 6)
+                        date.setDate(date.getDate() + 2);
+                    else
+                        date.setDate(date.getDate() + 1);
                     var day = date.getDate();
+
+                    var nextMonth = false;
+                    if (day < originalDate) nextMonth = true;
+
 
                     // var i;
                     // for (i = 0; i < assignments.length; i++) {
@@ -67,9 +101,11 @@ $(document).ready(function () {
 
                     var i;
                     var today = [];
-                    for (i = 0; i < dates.length; i++) {
+                    for (i = 0; i < dates.length; i+2) {
                         // if (dates[i].indexOf(day.toString()) != -1) today.push(assignments[i]);
-                        if(parseInt(dates[i]) <= day) today.push(assignments[i]);
+
+                        if (parseInt(dates[i]) <= day || nextMonth) today.push(assignments[i]);
+                        else if(nextMonth || month != dates[i + 1]) today.push(assignments[i]);
                         // else if(day == 1 && dates[i] !)
                     }
                     //set numAssignment for today
