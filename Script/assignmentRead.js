@@ -169,7 +169,7 @@ function printTime() {
         var hrsToday = Math.floor(totalZ / 60);
         var minToday = totalZ % 60;
         var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>today</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>coming future</b>! Good Luck!!   <br>  - TIMEOLOGY';
-        if(items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time found in the popup for a more personalized guess...'
+        if(items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time form found in the popup for a more accurate guess...'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
     });
 }

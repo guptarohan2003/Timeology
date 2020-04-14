@@ -12,6 +12,8 @@ chrome.runtime.onInstalled.addListener(function (details) {
     chrome.storage.sync.set({ enabled: "false" });
     //whether courses have been read
     chrome.storage.sync.set({ coursesRead: 'false' });
+    //whether user has done form
+    chrome.storage.sync.set({doneForm: "false"});
 
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{
