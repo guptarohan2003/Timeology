@@ -87,6 +87,7 @@ function setNumAssignments(assignments, today) {
         var e = getOccurences(val.class5, assignments).toString();
         var f = getOccurences(val.class6, assignments).toString();
         var g = getOccurences(val.class7, assignments).toString();
+        
         if (!today) {
             chrome.storage.sync.set({ numAssigments1: a });
             chrome.storage.sync.set({ numAssigments2: b });
