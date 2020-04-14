@@ -40,18 +40,23 @@ $(document).ready(function () {
                             console.log(assigDate.substring(end + 1) + 'e');
                             assigDate = assigDate.substring(end + 1);
                             
-                            // dates.push(assigDate);
-                            dates.push('19');
+                            dates.push(assigDate);
+                            // dates.push('19');
                         }
                     });
 
                     //next day number 
                     var date = new Date();
-                    date.setDate(17);
-                    if(date.getDay() != 5)
-                    date.setDate(date.getDate() + 1);
-                    else 
+                    date.setDate(30);
+                    var due = date.getDate();
+                    
+                    if(due == 5)
                     date.setDate(date.getDate() + 3);
+                    else if(due == 6)
+                    date.setDate(date.getDate() + 2);
+                    else 
+                    date.setDate(date.getDate() + 1);
+                    
                     var day = date.getDate();
 
                     // var i;
@@ -65,6 +70,7 @@ $(document).ready(function () {
                     for (i = 0; i < dates.length; i++) {
                         // if (dates[i].indexOf(day.toString()) != -1) today.push(assignments[i]);
                         if(parseInt(dates[i]) <= day) today.push(assignments[i]);
+                        // else if(day == 1 && dates[i] !)
                     }
                     //set numAssignment for today
                     setNumAssignments(today, true);

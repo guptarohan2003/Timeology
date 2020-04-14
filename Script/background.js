@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
     chrome.storage.sync.set({ atime5: '20' });
     chrome.storage.sync.set({ atime6: '20' });
     chrome.storage.sync.set({ atime7: '20' });
-
+    
     //whether timeology is enabled
     chrome.storage.sync.set({ enabled: "false" });
     //whether courses have been read
