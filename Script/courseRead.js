@@ -5,7 +5,9 @@ $(document).ready(function () {
     $(".course-title").each(function (index, content) {
         var str = content.innerHTML;
         str = str.substring(0, str.length - 7);
-        courses.push(str);
+        if(str != "Flex Studies"){
+            courses.push(str);
+        }
     });
 
     //store class in chrome sync storage
