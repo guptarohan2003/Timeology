@@ -15,17 +15,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/SC.png",
-            "32": "images/SC.png", 
-            "48": "images/SC.png",
-            "128": "images/SC.png"
+            "16": "images/Clock.png",
+            "32": "images/Clock.png", 
+            "48": "images/Clock.png",
+            "128": "images/Clock.png"
         }
     },
     "icons": {
-        "16": "images/SC.png",
-        "32": "images/SC.png",
-        "48": "images/SC.png",
-        "128": "images/SC.png"
+        "16": "images/Clock.png",
+        "32": "images/Clock.png",
+        "48": "images/Clock.png",
+        "128": "images/Clock.png"
     },
     "content_scripts": [
         {
