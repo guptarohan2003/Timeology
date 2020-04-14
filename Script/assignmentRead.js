@@ -17,7 +17,7 @@ $(document).ready(function () {
                     var h4_list = $(object[1]).find('h4');
 
                     $.each(h4_list, function (index, element) {
-                        // create a dummy object
+                        // create a dummy objectt
                         var dummy = $('<div/>').html(element.outerHTML).contents();
                         // console.log(dummy[0].outerHTML);
                         var course = dummy.find('.realm-title-course');
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
                     // var i;
                     // for (i = 0; i < assignments.length; i++) {
-                    //     // console.log('date: ' + dates[i] + ' class: ' + assignments[i]);
+                    //     // consoleb.log('date: ' + dates[i] + ' class: ' + assignments[i]);
                     // }
                     // console.log('number of assignments: ' + assignments.length);
 
