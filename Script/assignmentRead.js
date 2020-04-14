@@ -37,15 +37,14 @@ $(document).ready(function () {
                             assignments.push(str);
                             //console.log(str.substring(0, cut - 1));
                         }
-
-                        var i;
-                        for (i = 0; i < assignments.length; i++) {
-                            console.log(assignments[i]);
-                        }
-                        console.log('number of assignments: ' + assignments.length);
-                        setNumAssignments(assignments);
-                        printTime();
                     });
+                    var i;
+                    for (i = 0; i < assignments.length; i++) {
+                        console.log(assignments[i]);
+                    }
+                    console.log('number of assignments: ' + assignments.length);
+                    setNumAssignments(assignments);
+                    printTime();
                 },
                 dataType: "json"
             });
