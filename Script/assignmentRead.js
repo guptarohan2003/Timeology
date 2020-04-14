@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // console.log('before');
     chrome.storage.sync.get(['coursesRead', 'enabled'], function (val) {
         var bool = val.coursesRead;
         var enable = val.enabled;
@@ -12,7 +11,6 @@ $(document).ready(function () {
                 success: function (data) {
                     //array of each assignments course
                     var assignments = [];
-                    // create a empty div, with content from ajax output
                     var object = $('<div/>').html(data.html).contents();
 
                     var h4_list = $(object[1]).find('h4');
