@@ -37,48 +37,14 @@ $(document).ready(function () {
                             assignments.push(str);
                             //console.log(str.substring(0, cut - 1));
                         }
-                    });
 
-                    // get assignments that are overdue
-                    $.ajax({
-                        type: "GET",
-                        url: 'https://fuhsd.schoology.com/home/overdue_submissions_ajax',
-                        data: '',
-                        success: function (data2) {
-                            var object = $('<div/>').html(data2.html).contents();
-                            var h4_list = $(object[1]).find('h4');
-                            $.each(h4_list, function (index, element) {
-                                // create a dummy object
-                                var dummy = $('<div/>').html(element.outerHTML).contents();
-                                // console.log(dummy);
-                                var course = dummy.find('.realm-title-course');
-                                if (course && course.length > 0 && course[0].outerText) {
-                                    //console.log(course[0].outerText);
-                                    var str = course[0].outerText;
-                                    var cut = -1;
-                                    var i;
-                                    for (i = 0; i < str.length; i++) {
-                                        if (str.charAt(i) == '-') {
-                                            cut = i;
-                                            break;
-                                        }
-                                    }
-                                    str = str.substring(0, cut - 1);
-                                    assignments.push(str);
-                                    //console.log(str.substring(0, cut - 1));
-                                }
-                            });
-
-                            // assignments.push('Spanish 4 H');
-                            var i;
-                            for (i = 0; i < assignments.length; i++) {
-                                console.log(assignments[i]);
-                            }
-                            console.log('number of assignments: ' + assignments.length);
-                            setNumAssignments(assignments);
-                            printTime();
-                        },
-                        dataType: "json"
+                        var i;
+                        for (i = 0; i < assignments.length; i++) {
+                            console.log(assignments[i]);
+                        }
+                        console.log('number of assignments: ' + assignments.length);
+                        setNumAssignments(assignments);
+                        printTime();
                     });
                 },
                 dataType: "json"
