@@ -4,6 +4,7 @@ $(document).ready(function () {
         var bool = val.coursesRead;
         var enable = val.enabled;
         if (bool == 'true' && enable == 'true') {
+            // resetAssignments();
             $.ajax({
                 type: "GET",
                 url: '/home/upcoming_ajax',
@@ -19,7 +20,7 @@ $(document).ready(function () {
 
                         // create a dummy object
                         var dummy = $('<div/>').html(element.outerHTML).contents();
-                        console.log(dummy);
+                        // console.log(dummy);
                         var course = dummy.find('.realm-title-course');
                         if (course && course.length > 0 && course[0].outerText) {
                             //console.log(course[0].outerText);
@@ -42,9 +43,9 @@ $(document).ready(function () {
                     $.ajax({
                         type: "GET",
                         url: 'https://fuhsd.schoology.com/home/overdue_submissions_ajax',
-                        data2: '',
+                        data: '',
                         success: function (data2) {
-                            var object = $('<div/>').html(data.html).contents();
+                            var object = $('<div/>').html(data2.html).contents();
                             var h4_list = $(object[1]).find('h4');
                             $.each(h4_list, function (index, element) {
                                 // create a dummy object
@@ -70,7 +71,7 @@ $(document).ready(function () {
 
                             // assignments.push('Spanish 4 H');
                             var i;
-                            for(i = 0; i < assignments.length; i++){
+                            for (i = 0; i < assignments.length; i++) {
                                 console.log(assignments[i]);
                             }
                             console.log('number of assignments: ' + assignments.length);
@@ -87,7 +88,7 @@ $(document).ready(function () {
 
 });
 
-function setNumAssignments(assignments){
+function setNumAssignments(assignments) {
     var class_array = [
         'class1',
         'class2',
@@ -107,6 +108,18 @@ function setNumAssignments(assignments){
         chrome.storage.sync.set({ numAssigments7: getOccurences(val.class7, assignments).toString() });
     });
 }
+
+function resetAssignments() {
+    var z = "0";
+    chrome.storage.sync.set({ numAssigments1: z });
+    chrome.storage.sync.set({ numAssigments2: z });
+    chrome.storage.sync.set({ numAssigments3: z });
+    chrome.storage.sync.set({ numAssigments4: z });
+    chrome.storage.sync.set({ numAssigments5: z });
+    chrome.storage.sync.set({ numAssigments6: z });
+    chrome.storage.sync.set({ numAssigments7: z });
+}
+
 
 function printTime() {
     var assign_array = [
