@@ -45,8 +45,12 @@ $(document).ready(function () {
                     });
 
                     //next day number 
-                    var date = new Date()
+                    var date = new Date();
+                    date.setDate(24);
+                    if(date.getDay() != 5)
                     date.setDate(date.getDate() + 1);
+                    else 
+                    date.setDate(date.getDate() + 3);
                     var day = date.getDate();
 
                     // var i;
