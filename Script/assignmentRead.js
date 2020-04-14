@@ -49,7 +49,7 @@ $(document).ready(function () {
                             $.each(h4_list, function (index, element) {
                                 // create a dummy object
                                 var dummy = $('<div/>').html(element.outerHTML).contents();
-                                console.log(dummy);
+                                // console.log(dummy);
                                 var course = dummy.find('.realm-title-course');
                                 if (course && course.length > 0 && course[0].outerText) {
                                     //console.log(course[0].outerText);
@@ -68,7 +68,11 @@ $(document).ready(function () {
                                 }
                             });
 
-                            assignments.push('Spanish 4 H');
+                            // assignments.push('Spanish 4 H');
+                            var i;
+                            for(i = 0; i < assignments.length; i++){
+                                console.log(assignments[i]);
+                            }
                             console.log('number of assignments: ' + assignments.length);
                             setNumAssignments(assignments);
                             printTime();
