@@ -39,20 +39,21 @@ $(document).ready(function () {
                         }
                     });
 
-                    //todays day number
-                    var date = new Date().getDate();
-                    console.log(date);
+                    //next day number 
+                    var date = new Date()
+                    date.setDate(date.getDate() + 1);
+                    var day = date.getDate();
+
                     // var i;
                     // for (i = 0; i < assignments.length; i++) {
                     //     // console.log('date: ' + dates[i] + ' class: ' + assignments[i]);
                     // }
                     // console.log('number of assignments: ' + assignments.length);
+                    
                     var i;
                     var today = [];
                     for (i = 0; i < dates.length; i++) {
-                        var num = date + 1;
-                        num = num.toString();
-                        if (dates[i].indexOf(num) != -1) today.push(assignments[i]);
+                        if (dates[i].indexOf(day.toString()) != -1) today.push(assignments[i]);
                     }
                     //set numAssignment for today
                     setNumAssignments(today, true);
