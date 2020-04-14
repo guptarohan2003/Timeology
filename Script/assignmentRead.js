@@ -73,7 +73,6 @@ $(document).ready(function () {
 
                     var date = new Date();
 
-                    // date.setDate(10);
                     // date = new Date(2020, 7, 1, 1, 1, 1, 1);
 
                     //dayofweek
@@ -89,7 +88,7 @@ $(document).ready(function () {
 
                     var day = date.getDate();
                     var month = date.getMonth();
-                    
+
                     var i;
                     var today = [];
                     for (i = 0; i < dates.length; i += 2) {
@@ -99,7 +98,7 @@ $(document).ready(function () {
                         else if(month > dates[i+1]) today.push(assignments[i]);
                     }
 
-                    //set numAssignment for today
+                    //set numAssignment for upcoming duedate
                     setNumAssignments(today, true);
                     //set numTotalAssignment for total
                     setNumAssignments(assignments, false);
