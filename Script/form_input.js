@@ -48,7 +48,6 @@ function btnSubmitHandler() {
     if(atime7 != 0)
     chrome.storage.sync.set({ atime7: atime7.toString() });
 
-    //reset form
     form.reset();
 
     alert('Thanks we got it!');
