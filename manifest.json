@@ -22,10 +22,10 @@
         }
     },
     "icons": {
-        "16": "images/Clock.png",
-        "32": "images/Clock.png",
-        "48": "images/Clock.png",
-        "128": "images/Clock.png"
+        "16": "images/CEPic.png",
+        "32": "images/CEPic.png",
+        "48": "images/CEPic.png",
+        "128": "images/CEPic.png"
     },
     "content_scripts": [
         {
