@@ -220,7 +220,7 @@ function printTime(day) {
         else datestr = day + "th";
 
         var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>before the ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>near future</b>! Good Luck!!   <br>  - TIMEOLOGY';
-        if (items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time form found in the popup for a more accurate guess...'
+        if (items.doneForm != "true") str += '<br><br>We recommend you to fill the personalized time form for better accuracy. Pop up form is available by clicking the extension icon.'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
     });
 }
