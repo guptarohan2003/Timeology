@@ -15,17 +15,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/Clock.png",
-            "32": "images/Clock.png", 
-            "48": "images/Clock.png",
-            "128": "images/Clock.png"
+            "16": "images/popup16.png",
+            "32": "images/popup32.png", 
+            "48": "images/popup48.png",
+            "128": "images/popup128.png"
         }
     },
     "icons": {
-        "16": "images/CEPic.png",
-        "32": "images/CEPic.png",
-        "48": "images/CEPic.png",
-        "128": "images/CEPic.png"
+        "16": "images/16.png",
+        "32": "images/32.png",
+        "48": "images/48.png",
+        "128": "images/128.png"
     },
     "content_scripts": [
         {
