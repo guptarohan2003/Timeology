@@ -43,6 +43,7 @@ select {
 .tooltip-right {
   top: -5px;
   left: 125%;
+  margin-top: 30px;
 }
 
 h2{
