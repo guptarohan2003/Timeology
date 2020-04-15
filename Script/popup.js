@@ -40,14 +40,3 @@ document.addEventListener('DOMContentLoaded', function () {
         chrome.tabs.create({ url: "form.html" });
     });
 });
-
-
-// function enableTimeology() {
-//     // document.getElementById("timedisplay").style.display = "inline";
-//     document.getElementById("go_to_form").style.display = "inline";
-// }
-
-// function disableTimeology() {
-//     document.getElementById("go_to_form").style.display = "none";
-//     // document.getElementById("timedisplay").style.display = "none";
-// }

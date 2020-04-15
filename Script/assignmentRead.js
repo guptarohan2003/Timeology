@@ -3,7 +3,6 @@ $(document).ready(function () {
         var bool = val.coursesRead;
         var enable = val.enabled;
         if (bool == 'true' && enable == 'true') {
-            // resetAssignments();
             $.ajax({
                 type: "GET",
                 url: '/home/upcoming_ajax',
@@ -63,8 +62,6 @@ $(document).ready(function () {
                                     break;
                                 }
                             }
-                            // duedate = 3;
-                            // monthNum = 7;
                             dates.push(duedate);
                             dates.push(monthNum);
                             // console.log(monthNum)
@@ -150,18 +147,6 @@ function setNumAssignments(assignments, today) {
         }
     });
 }
-
-// function resetAssignments() {
-//     var z = "0";
-//     chrome.storage.sync.set({ numAssigments1: z });
-//     chrome.storage.sync.set({ numAssigments2: z });
-//     chrome.storage.sync.set({ numAssigments3: z });
-//     chrome.storage.sync.set({ numAssigments4: z });
-//     chrome.storage.sync.set({ numAssigments5: z });
-//     chrome.storage.sync.set({ numAssigments6: z });
-//     chrome.storage.sync.set({ numAssigments7: z });
-// }
-
 
 function printTime(day) {
     var assign_array = [
