@@ -95,7 +95,7 @@ $(document).ready(function () {
                         if(month == dates[i + 1]){
                             if(parseInt(dates[i]) <= day) today.push(assignments[i]);
                         }
-                        else if(month > dates[i+1]) today.push(assignments[i]);
+                        else if(month > dates[i+1] && !(month == 11 && dates[i+1] <= 5)) today.push(assignments[i]);
                     }
 
                     //set numAssignment for upcoming duedate
@@ -219,10 +219,6 @@ function printTime(day) {
         else if (day == 3) datestr = "3rd";
         else datestr = day + "th";
 
-        hrsToday = 2;
-        minToday = 27;
-        hrs = 5;
-        min = 48;
         var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>before the ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>near future</b>! Good Luck!!   <br>  - TIMEOLOGY';
         if (items.doneForm != "true") str += '<br><br>PS: We recommend you fill the personalized time form found in the popup for a more accurate guess...'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');

@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var value = val.enabled;
         if (value == 'true') {
             document.getElementById("enableTimeology").innerHTML = 'Disable Timeology';
-            enableTimeology();
+            document.getElementById("go_to_form").style.display = "inline";
         } else {
             document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
-            disableTimeology();
+            document.getElementById("go_to_form").style.display = "none";
         }
     });
 
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (val.coursesRead == 'false') {
                     chrome.runtime.sendMessage({ greeting: "courses url" });
                 }
-                enableTimeology();
+                document.getElementById("go_to_form").style.display = "inline";
                 document.getElementById("enableTimeology").innerHTML = "Disable Timeology";
                 chrome.storage.sync.set({ enabled: "true" });
                 chrome.tabs.reload();
             });
         } else {
-            disableTimeology();
+            document.getElementById("go_to_form").style.display = "none";
             document.getElementById("enableTimeology").innerHTML = "Enable Timeology";
             chrome.storage.sync.set({ enabled: "false" });
             chrome.tabs.reload();
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function enableTimeology() {
-    document.getElementById("timedisplay").style.display = "inline";
-    document.getElementById("go_to_form").style.display = "inline";
-}
+// function enableTimeology() {
+//     // document.getElementById("timedisplay").style.display = "inline";
+//     document.getElementById("go_to_form").style.display = "inline";
+// }
 
-function disableTimeology() {
-    document.getElementById("go_to_form").style.display = "none";
-    document.getElementById("timedisplay").style.display = "none";
-}
+// function disableTimeology() {
+//     document.getElementById("go_to_form").style.display = "none";
+//     // document.getElementById("timedisplay").style.display = "none";
+// }
