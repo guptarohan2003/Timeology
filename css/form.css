@@ -46,8 +46,11 @@ select {
 }
 
 h2{
-  font-size: 25px;
+  font-size: 30px;
   float: left;
+  font-style: italic;
+  padding-left: 16px;
+  font-family: 'Quicksand';
 }
 h1 {
   background-image: linear-gradient(to right, red, orange);
