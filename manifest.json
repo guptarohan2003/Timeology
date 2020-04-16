@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Timeology",
+    "name": "Timeology for Schoology",
+    "short_name": "Timeology",
     "version": "1.1.2",
     "description": "Timeology is a personalized tool that uses your help to provide you with an accurate estimate of how much homework you have.",
     "permissions": [
@@ -15,17 +16,17 @@
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "images/pop16.png",
-            "32": "images/pop32.png", 
-            "48": "images/pop48.png",
-            "128": "images/pop128.png"
+            "16": "images/16.png",
+            "32": "images/32.png", 
+            "48": "images/48.png",
+            "128": "images/128.png"
         }
     },
     "icons": {
-        "16": "images/i16.png",
-        "32": "images/i32.png",
-        "48": "images/i48.png",
-        "128": "images/i128.png"
+        "16": "images/16.png",
+        "32": "images/32.png",
+        "48": "images/48.png",
+        "128": "images/128.png"
     },
     "content_scripts": [
         {
