@@ -183,8 +183,8 @@ function printTime(day) {
         var at7 = parseInt(items.atime7) * parseInt(items.numAssigments7);
 
         var totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;
-        var hrs = Math.floor(totalZ / 60);
-        var min = totalZ % 60;
+        // var hrs = Math.floor(totalZ / 60);
+        // var min = totalZ % 60;
 
         at1 = parseInt(items.atime1) * parseInt(items.numTodayAssigments1);
         at2 = parseInt(items.atime2) * parseInt(items.numTodayAssigments2);
@@ -194,9 +194,13 @@ function printTime(day) {
         at6 = parseInt(items.atime6) * parseInt(items.numTodayAssigments6);
         at7 = parseInt(items.atime7) * parseInt(items.numTodayAssigments7);
 
-        totalZ = at1 + at2 + at3 + at4 + at5 + at6 + at7;
-        var hrsToday = Math.floor(totalZ / 60);
-        var minToday = totalZ % 60;
+        var totalZtoday = at1 + at2 + at3 + at4 + at5 + at6 + at7;
+        var hrsToday = Math.floor(totalZtoday / 60);
+        var minToday = totalZtoday % 60;
+        
+        var temp = totalZ - totalZtoday;
+        var hrs = Math.floor(temp / 60);
+        var min = temp % 60;
 
         var datestr;
         if (day == 1) datestr = "1st";
