@@ -1,3 +1,4 @@
+//dfsfd
 $(document).ready(function () {
     chrome.storage.sync.get(['coursesRead', 'enabled'], function (val) {
         var bool = val.coursesRead;
