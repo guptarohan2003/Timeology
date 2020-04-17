@@ -78,7 +78,7 @@ $(document).ready(function () {
                     var originalDate = date.getDate();
                     //set upcoming due date
                     if (due == 5)
-                        date.setDate(date.getDate() + 3 - 3);
+                        date.setDate(date.getDate());
                     else if (due == 6)
                         date.setDate(date.getDate() + 2);
                     else
