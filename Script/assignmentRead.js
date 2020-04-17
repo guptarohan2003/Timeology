@@ -73,11 +73,12 @@ $(document).ready(function () {
                     // date = new Date(2020, 7, 1, 1, 1, 1, 1);
 
                     //dayofweek
+                    // date.setDate(date.getDate() - 1);
                     var due = date.getDay();
                     var originalDate = date.getDate();
                     //set upcoming due date
                     if (due == 5)
-                        date.setDate(date.getDate() + 3);
+                        date.setDate(date.getDate() + 3 - 3);
                     else if (due == 6)
                         date.setDate(date.getDate() + 2);
                     else
@@ -100,7 +101,7 @@ $(document).ready(function () {
                     //set numTotalAssignment for total
                     setNumAssignments(assignments, false);
 
-                    printTime(day);
+                    printTime(day, due);
                 },
                 dataType: "json"
             });
@@ -148,7 +149,7 @@ function setNumAssignments(assignments, today) {
     });
 }
 
-function printTime(day) {
+function printTime(day, due) {
     var assign_array = [
         'numAssigments1',
         'numAssigments2',
@@ -202,13 +203,14 @@ function printTime(day) {
         var hrs = Math.floor(temp / 60);
         var min = temp % 60;
 
-        var datestr;
-        if (day == 1) datestr = "1st";
-        else if (day == 2) datestr = "2nd";
-        else if (day == 3) datestr = "3rd";
-        else datestr = day + "th";
+        var datestr = 'the ';
+        if (day == 1) datestr += "1st";
+        else if (day == 2) datestr += "2nd";
+        else if (day == 3) datestr += "3rd";
+        else datestr += day + "th";
+        if(due == 5) datestr = 'today night';
 
-        var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>before the ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>near future</b>! Good Luck!!   <br>  - TIMEOLOGY';
+        var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>for ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>near future</b>! Good Luck!!   <br>  - TIMEOLOGY';
         if (items.doneForm != "true") str += '<br><br>We recommend you to fill the personalized time form for better accuracy. Pop up form is available by clicking the extension icon.'
         $("#right-column").prepend('<div id="timeology time" style="padding-left: 10px; padding-right: 10px; border: 1px solid #4CAF50; border-radius: 15px"><table> <tr> <th>Amount of Homework</th> </tr> <tr> <td id = "time display">' + str + '</td> </tr></table></div>');
     });
