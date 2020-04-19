@@ -8,9 +8,9 @@ $(document).ready(function () {
                 url: '/home/upcoming_ajax',
                 data: '',
                 success: function (data) {
-                    //array of each assignments course
                     var assignments = [];
                     var dates = [];
+                    var months = [];
                     var object = $('<div/>').html(data.html).contents();
 
                     var h4_list = $(object[1]).find('h4');
@@ -34,7 +34,7 @@ $(document).ready(function () {
                             assigDate = assigDate.substring(start + 2);
                             var end = assigDate.indexOf(',');
                             assigDate = assigDate.substring(0, end);
-                            console.log(assigDate);
+                            // console.log(assigDate);
                             var end = assigDate.indexOf(' ');
                             // console.log(assigDate.substring(end + 1) + 'e');
                             var duedate = assigDate.substring(end + 1);
@@ -55,15 +55,16 @@ $(document).ready(function () {
                             month[11] = "December";
                             var monthNum = -1;
                             var i;
-                            for(i = 0; i < 12; i++){
+                            for (i = 0; i < 12; i++) {
                                 var m = month[i];
-                                if(m.localeCompare(duemonth) == 0){
+                                if (m.localeCompare(duemonth) == 0) {
                                     monthNum = i;
                                     break;
                                 }
                             }
                             dates.push(duedate);
-                            dates.push(monthNum);
+                            months.push(monthNum);
+                            // dates.push(monthNum);
                             // console.log(monthNum)
                         }
                     });
@@ -89,12 +90,17 @@ $(document).ready(function () {
 
                     var i;
                     var today = [];
-                    for (i = 0; i < dates.length; i += 2) {
-                        if(month == dates[i + 1]){
-                            if(parseInt(dates[i]) <= day) today.push(assignments[i]);
+                    for (i = 0; i < dates.length; i++) {
+                        if (month == months[i]) {
+                            if (parseInt(dates[i]) <= day) today.push(assignments[i]);
                         }
-                        else if(month > dates[i+1] && !(month == 11 && dates[i+1] <= 5)) today.push(assignments[i]);
+                        else if (month > months[i]) today.push(assignments[i]);
                     }
+
+                    // console.log(assignments);
+                    // console.log(today);
+                    // console.log(dates);
+                    // console.log(months);
 
                     //set numAssignment for upcoming duedate
                     setNumAssignments(today, true);
@@ -198,7 +204,7 @@ function printTime(day, due) {
         var totalZtoday = at1 + at2 + at3 + at4 + at5 + at6 + at7;
         var hrsToday = Math.floor(totalZtoday / 60);
         var minToday = totalZtoday % 60;
-        
+
         var temp = totalZ - totalZtoday;
         var hrs = Math.floor(temp / 60);
         var min = temp % 60;
@@ -208,7 +214,7 @@ function printTime(day, due) {
         else if (day == 2) datestr += "2nd";
         else if (day == 3) datestr += "3rd";
         else datestr += day + "th";
-        if(due == 5) datestr = 'today night';
+        if (due == 5) datestr = 'today night';
 
         var str = 'You have about <b>' + hrsToday + ' hrs and ' + minToday + ' min</b> of HW <b>for ' + datestr + '</b>  <br> <b> and about ' + hrs + ' hrs and ' + min + ' min</b> of HW in the <b>near future</b>! Good Luck!!   <br>  - TIMEOLOGY';
         if (items.doneForm != "true") str += '<br><br>We recommend you to fill the personalized time form for better accuracy. Pop up form is available by clicking the extension icon.'
@@ -226,3 +232,4 @@ function getOccurences(value, assignments) {
     }
     return num;
 };
+
