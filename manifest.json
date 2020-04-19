@@ -49,19 +49,6 @@
             "css": [
                 "bootstrap/css/bootstrap.min.css"
             ]
-        },
-        {
-            "matches": [
-                "https://fuhsd.schoology.com/grades/grades*"
-            ],
-            "js": [
-                "script/gradeCalc.js",
-                "script/jquery-3.3.1.min.js",
-                "bootstrap/js/bootstrap.min.js"
-            ],
-            "css": [
-                "bootstrap/css/bootstrap.min.css"
-            ]
         }
     ],
 
